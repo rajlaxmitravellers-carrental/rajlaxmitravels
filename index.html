@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raj Laxmi Travels - Self Drive & Chauffeur Car Rental in Panna</title>
+    
+    <!-- PWA / Web App Meta Tags -->
+    <meta name="theme-color" content="#0f172a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Raj Laxmi Travels">
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3202/3202021.png">
+
+    <!-- Web App Manifest (Inline Blob) -->
+    <link rel="manifest" id="manifestPlaceholder">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
@@ -87,8 +99,11 @@
                 <a href="#contact" class="hover:text-amber-500 transition">Contact</a>
             </nav>
 
-            <!-- Call Header Action Button -->
+            <!-- Call Header Action Button & PWA Install Button -->
             <div class="hidden sm:flex items-center gap-3">
+                <button id="pwaInstallBtnNav" onclick="installPWAApp()" class="hidden bg-slate-800 border border-amber-500/50 text-amber-400 hover:bg-amber-500 hover:text-slate-950 font-bold px-4 py-2.5 rounded-xl transition text-xs flex items-center gap-2">
+                    <i class="fa-solid fa-download"></i> Install App
+                </button>
                 <a href="tel:9303418620" class="bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-bold px-5 py-2.5 rounded-xl hover:from-amber-400 hover:to-amber-500 transition shadow-lg shadow-amber-500/20 text-sm flex items-center gap-2">
                     <i class="fa-solid fa-phone"></i> Call Now
                 </a>
@@ -107,12 +122,32 @@
             <a href="#fleet" onclick="toggleMobileMenu()" class="block py-2 hover:text-amber-500 border-b border-slate-800">Our Fleet</a>
             <a href="#why-us" onclick="toggleMobileMenu()" class="block py-2 hover:text-amber-500 border-b border-slate-800">Why Choose Us</a>
             <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 hover:text-amber-500">Contact & Map</a>
+            
             <div class="pt-2 flex flex-col gap-2">
-                <a href="tel:9303418620" class="w-full text-center bg-amber-500 text-slate-950 font-bold py-2.5 rounded-xl">Call +91 93034 18620</a>
-                <a href="tel:7999647528" class="w-full text-center bg-slate-800 text-slate-200 font-bold py-2.5 rounded-xl border border-slate-700">Call +91 79996 47528</a>
+                <button id="pwaInstallBtnMobile" onclick="installPWAApp()" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-extrabold py-3 rounded-xl flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-mobile-screen-button text-lg"></i> Install Raj Laxmi App
+                </button>
+                <a href="tel:9303418620" class="w-full text-center bg-slate-800 text-slate-200 font-bold py-2.5 rounded-xl border border-slate-700">Call +91 93034 18620</a>
             </div>
         </div>
     </header>
+
+    <!-- App Install Banner Popup (Mobile Prompt) -->
+    <div id="pwaBanner" class="hidden fixed top-16 inset-x-4 z-50 bg-slate-900 border-2 border-amber-500 p-4 rounded-2xl shadow-2xl flex justify-between items-center max-w-lg mx-auto">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-amber-500 text-slate-950 rounded-xl flex items-center justify-center font-bold text-xl">
+                <i class="fa-solid fa-car"></i>
+            </div>
+            <div>
+                <h4 class="text-sm font-bold text-white">Install Raj Laxmi Travels App</h4>
+                <p class="text-[11px] text-slate-400">Fast 1-click booking on your phone!</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-2">
+            <button onclick="installPWAApp()" class="bg-amber-500 text-slate-950 font-bold px-3 py-1.5 rounded-lg text-xs">Install</button>
+            <button onclick="dismissPWABanner()" class="text-slate-400 hover:text-white px-2 py-1"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section id="home" class="relative min-h-[90vh] flex items-center py-16 px-4 overflow-hidden bg-slate-950">
@@ -174,13 +209,13 @@
                         <!-- Service Type Radio -->
                         <div class="grid grid-cols-2 gap-3 mb-2">
                             <label class="cursor-pointer">
-                                <input type="radio" name="rentalOption" value="Chauffeur Driven" checked class="peer hidden" onchange="updateRentalTypeUI()">
+                                <input type="radio" name="rentalOption" value="Chauffeur Driven" checked class="peer hidden">
                                 <div class="text-center py-2.5 px-3 rounded-xl border border-slate-700 bg-slate-800/80 text-xs font-bold text-slate-300 peer-checked:bg-amber-500 peer-checked:text-slate-950 peer-checked:border-amber-500 transition">
                                     <i class="fa-solid fa-user-tie mr-1"></i> With Driver
                                 </div>
                             </label>
                             <label class="cursor-pointer">
-                                <input type="radio" name="rentalOption" value="Self Drive" class="peer hidden" onchange="updateRentalTypeUI()">
+                                <input type="radio" name="rentalOption" value="Self Drive" class="peer hidden">
                                 <div class="text-center py-2.5 px-3 rounded-xl border border-slate-700 bg-slate-800/80 text-xs font-bold text-slate-300 peer-checked:bg-amber-500 peer-checked:text-slate-950 peer-checked:border-amber-500 transition">
                                     <i class="fa-solid fa-steering-wheel mr-1"></i> Self Drive
                                 </div>
@@ -697,6 +732,33 @@
 
     <!-- JavaScript Code -->
     <script>
+        // Dynamic Web App Manifest Generator
+        const manifestObj = {
+            "name": "Raj Laxmi Travels Panna",
+            "short_name": "Raj Laxmi Cabs",
+            "start_url": ".",
+            "display": "standalone",
+            "background_color": "#0f172a",
+            "theme_color": "#0f172a",
+            "description": "Book Self Drive & Chauffeur Cabs in Panna",
+            "icons": [
+                {
+                    "src": "https://cdn-icons-png.flaticon.com/512/3202/3202021.png",
+                    "sizes": "192x192",
+                    "type": "image/png"
+                },
+                {
+                    "src": "https://cdn-icons-png.flaticon.com/512/3202/3202021.png",
+                    "sizes": "512x512",
+                    "type": "image/png"
+                }
+            ]
+        };
+        const stringManifest = JSON.stringify(manifestObj);
+        const blobManifest = new Blob([stringManifest], {type: 'application/json'});
+        const manifestUrl = URL.createObjectURL(blobManifest);
+        document.getElementById('manifestPlaceholder').setAttribute('href', manifestUrl);
+
         // Set default date to today
         document.addEventListener('DOMContentLoaded', () => {
             const today = new Date().toISOString().split('T')[0];
@@ -746,8 +808,36 @@
             window.open(whatsappUrl, '_blank');
         }
 
-        function updateRentalTypeUI() {
-            // Placeholder for custom dynamic UI tweaks if needed
+        // PWA Install Prompt Logic
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            
+            // Show Install Buttons
+            const navBtn = document.getElementById('pwaInstallBtnNav');
+            const banner = document.getElementById('pwaBanner');
+            if(navBtn) navBtn.classList.remove('hidden');
+            if(banner) banner.classList.remove('hidden');
+        });
+
+        function installPWAApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the install prompt');
+                    }
+                    deferredPrompt = null;
+                });
+            } else {
+                alert("App install karne ke liye Chrome Browser menu (⋮) me jaakar 'Add to Home screen' ya 'Install app' par click karein!");
+            }
+        }
+
+        function dismissPWABanner() {
+            const banner = document.getElementById('pwaBanner');
+            if(banner) banner.classList.add('hidden');
         }
     </script>
 </body>
