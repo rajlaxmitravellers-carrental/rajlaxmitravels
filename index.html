@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="hi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raj Laxmi Travels - Self Drive & Chauffeur Car Rental in Panna</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        amber: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .pulse-glow {
+            animation: pulse-glow-anim 2s infinite;
+        }
+        @keyframes pulse-glow-anim {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-slate-900">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 text-slate-950 px-4 py-2 text-xs md:text-sm font-bold text-center flex justify-between items-center max-w-full overflow-hidden">
+        <div class="max-w-7xl mx-auto w-full flex justify-between items-center">
+            <span class="flex items-center gap-2">
+                <i class="fa-solid fa-location-dot"></i> Near Shanvi Landmark, Gehra, Panna (M.P.)
+            </span>
+            <div class="hidden md:flex items-center gap-6">
+                <a href="tel:9303418620" class="hover:underline flex items-center gap-1"><i class="fa-solid fa-phone"></i> +91 93034 18620</a>
+                <a href="https://www.instagram.com/rajlaxmitravellers.78?igsh=Yng0bWRqNGtlNGZp" target="_blank" class="hover:underline flex items-center gap-1"><i class="fa-brands fa-instagram"></i> @rajlaxmitravellers.78</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="bg-slate-900/90 backdrop-blur-md border-b border-slate-800 sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 bg-gradient-to-br from-amber-500 to-amber-700 rounded-xl flex items-center justify-center shadow-lg shadow-amber-500/20 group-hover:scale-105 transition">
+                    <i class="fa-solid fa-car-rear text-2xl text-slate-950"></i>
+                </div>
+                <div>
+                    <span class="text-xl md:text-2xl font-black tracking-tight text-white block leading-none">
+                        RAJ LAXMI <span class="text-amber-500">TRAVELS</span>
+                    </span>
+                    <span class="text-[10px] tracking-widest text-slate-400 font-semibold uppercase">Panna, Madhya Pradesh</span>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <nav class="hidden md:flex items-center gap-8 font-semibold text-sm">
+                <a href="#home" class="hover:text-amber-500 transition">Home</a>
+                <a href="#services" class="hover:text-amber-500 transition">Services</a>
+                <a href="#fleet" class="hover:text-amber-500 transition">Our Fleet</a>
+                <a href="#why-us" class="hover:text-amber-500 transition">Why Us</a>
+                <a href="#reviews" class="hover:text-amber-500 transition">Reviews</a>
+                <a href="#contact" class="hover:text-amber-500 transition">Contact</a>
+            </nav>
+
+            <!-- Call Header Action Button -->
+            <div class="hidden sm:flex items-center gap-3">
+                <a href="tel:9303418620" class="bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-bold px-5 py-2.5 rounded-xl hover:from-amber-400 hover:to-amber-500 transition shadow-lg shadow-amber-500/20 text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-phone"></i> Call Now
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menuToggle" class="md:hidden text-2xl text-slate-300 focus:outline-none" onclick="toggleMobileMenu()">
+                <i class="fa-solid fa-bars" id="menuIcon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Nav -->
+        <div id="mobileMenu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3 font-semibold text-slate-200 text-sm">
+            <a href="#home" onclick="toggleMobileMenu()" class="block py-2 hover:text-amber-500 border-b border-slate-800">Home</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="block py-2 hover:text-amber-500 border-b border-slate-800">Services</a>
+            <a href="#fleet" onclick="toggleMobileMenu()" class="block py-2 hover:text-amber-500 border-b border-slate-800">Our Fleet</a>
+            <a href="#why-us" onclick="toggleMobileMenu()" class="block py-2 hover:text-amber-500 border-b border-slate-800">Why Choose Us</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 hover:text-amber-500">Contact & Map</a>
+            <div class="pt-2 flex flex-col gap-2">
+                <a href="tel:9303418620" class="w-full text-center bg-amber-500 text-slate-950 font-bold py-2.5 rounded-xl">Call +91 93034 18620</a>
+                <a href="tel:7999647528" class="w-full text-center bg-slate-800 text-slate-200 font-bold py-2.5 rounded-xl border border-slate-700">Call +91 79996 47528</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-[90vh] flex items-center py-16 px-4 overflow-hidden bg-slate-950">
+        <!-- Background Hero Image with dark gradient overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80" alt="Luxury Car" class="w-full h-full object-cover object-center opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/70 to-transparent"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto w-full relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+            <!-- Left Headline -->
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-400 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider">
+                    <i class="fa-solid fa-crown"></i> Panna's Most Trusted Rental Cabs
+                </div>
+                
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
+                    Premium <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">Self Drive</span> & Chauffeur Car Rental in Panna
+                </h1>
+
+                <!-- Special Main Line Highlight -->
+                <div class="p-4 rounded-xl bg-slate-900/80 border-l-4 border-amber-500 text-amber-300 font-bold text-lg md:text-xl italic shadow-lg">
+                    "From City Rides to Long Drives — We've Got the Perfect Car for Every Journey."
+                </div>
+
+                <p class="text-slate-300 text-base md:text-lg leading-relaxed max-w-2xl">
+                    Experience unmatched comfort with Raj Laxmi Travels. Clean, sanitized brand-new cars available for local rentals, outstation trips, airport transfers, and self-drive adventures across MP & India.
+                </p>
+
+                <!-- Feature badges -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2">
+                    <div class="flex items-center gap-3 bg-slate-900/60 border border-slate-800 p-3 rounded-xl">
+                        <i class="fa-solid fa-key text-amber-500 text-xl"></i>
+                        <span class="text-xs font-bold text-slate-200">Self Drive & Driver Available</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-slate-900/60 border border-slate-800 p-3 rounded-xl">
+                        <i class="fa-solid fa-shield-halved text-amber-500 text-xl"></i>
+                        <span class="text-xs font-bold text-slate-200">Clean & Sanitized Fleet</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-slate-900/60 border border-slate-800 p-3 rounded-xl col-span-2 sm:col-span-1">
+                        <i class="fa-solid fa-clock text-amber-500 text-xl"></i>
+                        <span class="text-xs font-bold text-slate-200">24/7 Pickup Support</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Quick Booking Card -->
+            <div class="lg:col-span-5">
+                <div class="glass-card p-6 md:p-8 rounded-2xl shadow-2xl relative border border-slate-700/60">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-bolt text-amber-500"></i> Direct Booking
+                        </h2>
+                        <span class="bg-green-500/20 text-green-400 text-xs px-2.5 py-1 rounded-full border border-green-500/30 font-semibold">Instant Quote</span>
+                    </div>
+
+                    <form id="heroBookingForm" onsubmit="handleHeroBooking(event)" class="space-y-4">
+                        <!-- Service Type Radio -->
+                        <div class="grid grid-cols-2 gap-3 mb-2">
+                            <label class="cursor-pointer">
+                                <input type="radio" name="rentalOption" value="Chauffeur Driven" checked class="peer hidden" onchange="updateRentalTypeUI()">
+                                <div class="text-center py-2.5 px-3 rounded-xl border border-slate-700 bg-slate-800/80 text-xs font-bold text-slate-300 peer-checked:bg-amber-500 peer-checked:text-slate-950 peer-checked:border-amber-500 transition">
+                                    <i class="fa-solid fa-user-tie mr-1"></i> With Driver
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="rentalOption" value="Self Drive" class="peer hidden" onchange="updateRentalTypeUI()">
+                                <div class="text-center py-2.5 px-3 rounded-xl border border-slate-700 bg-slate-800/80 text-xs font-bold text-slate-300 peer-checked:bg-amber-500 peer-checked:text-slate-950 peer-checked:border-amber-500 transition">
+                                    <i class="fa-solid fa-steering-wheel mr-1"></i> Self Drive
+                                </div>
+                            </label>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Pick-up Location / City</label>
+                            <div class="relative">
+                                <i class="fa-solid fa-circle-dot text-amber-500 absolute left-3.5 top-3.5 text-sm"></i>
+                                <input type="text" id="pickupLoc" placeholder="e.g. Gehra, Panna / Airport" required class="w-full bg-slate-900 border border-slate-700 rounded-xl py-2.5 pl-10 pr-3 text-sm text-white focus:outline-none focus:border-amber-500 transition">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Drop Location / Destination</label>
+                            <div class="relative">
+                                <i class="fa-solid fa-location-dot text-amber-500 absolute left-3.5 top-3.5 text-sm"></i>
+                                <input type="text" id="dropLoc" placeholder="e.g. Khajuraho / Satna / Local" required class="w-full bg-slate-900 border border-slate-700 rounded-xl py-2.5 pl-10 pr-3 text-sm text-white focus:outline-none focus:border-amber-500 transition">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Travel Date</label>
+                                <input type="date" id="travelDate" required class="w-full bg-slate-900 border border-slate-700 rounded-xl py-2.5 px-3 text-sm text-white focus:outline-none focus:border-amber-500 transition">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Select Car</label>
+                                <select id="carSelect" class="w-full bg-slate-900 border border-slate-700 rounded-xl py-2.5 px-3 text-sm text-white focus:outline-none focus:border-amber-500 transition">
+                                    <option value="Kia Carens (White)">Kia Carens (White)</option>
+                                    <option value="Innova Crysta">Innova Crysta</option>
+                                    <option value="Ertiga">Maruti Ertiga</option>
+                                    <option value="Swift Dzire">Swift Dzire</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-extrabold py-3.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-base">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i> Book via WhatsApp
+                        </button>
+
+                        <p class="text-[11px] text-center text-slate-400">
+                            Direct connection with Raj Laxmi Travels team on WhatsApp.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-slate-900 border-t border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-amber-500 font-bold text-xs uppercase tracking-widest">Our Expertise</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-1">Services We Offer</h2>
+                <p class="text-slate-400 text-sm mt-2">Tailored travel solutions designed for ultimate safety, comfort, and peace of mind.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-6">
+                <!-- Service 1 -->
+                <div class="bg-slate-950 border border-slate-800 p-6 rounded-2xl hover:border-amber-500/50 transition group">
+                    <div class="w-14 h-14 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-slate-950 transition">
+                        <i class="fa-solid fa-key"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Self Drive Cars</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Drive at your own pace with total privacy. Take our clean, well-maintained vehicles for family trips or private drives.
+                    </p>
+                    <a href="#heroBookingForm" class="text-amber-500 text-xs font-bold hover:underline flex items-center gap-1">Inquire Self Drive &rarr;</a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-slate-950 border border-slate-800 p-6 rounded-2xl hover:border-amber-500/50 transition group">
+                    <div class="w-14 h-14 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-slate-950 transition">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Chauffeur Driven Cars</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Sit back, relax, and enjoy your journey with our polite, experienced, and background-verified professional drivers.
+                    </p>
+                    <a href="#heroBookingForm" class="text-amber-500 text-xs font-bold hover:underline flex items-center gap-1">Inquire Chauffeur &rarr;</a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-slate-950 border border-slate-800 p-6 rounded-2xl hover:border-amber-500/50 transition group">
+                    <div class="w-14 h-14 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-slate-950 transition">
+                        <i class="fa-solid fa-plane-departure"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Airport Transfers</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Punctual pickup & drop services for Khajuraho Airport, Jabalpur, Gwalior, or Bhopal Airports with guaranteed timeliness.
+                    </p>
+                    <a href="#heroBookingForm" class="text-amber-500 text-xs font-bold hover:underline flex items-center gap-1">Book Airport Pickup &rarr;</a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-slate-950 border border-slate-800 p-6 rounded-2xl hover:border-amber-500/50 transition group">
+                    <div class="w-14 h-14 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-slate-950 transition">
+                        <i class="fa-solid fa-city"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Local Rental</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Affordable hourly/daily local packages for Panna city rides, shopping, business meetings, or Panna National Park safari drop.
+                    </p>
+                    <a href="#heroBookingForm" class="text-amber-500 text-xs font-bold hover:underline flex items-center gap-1">Local Packages &rarr;</a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-slate-950 border border-slate-800 p-6 rounded-2xl hover:border-amber-500/50 transition group sm:col-span-2 md:col-span-2">
+                    <div class="w-14 h-14 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-slate-950 transition">
+                        <i class="fa-solid fa-route"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Outstation Trips</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Planning a long-distance round trip or one-way drop to Satna, Rewa, Katni, Sagar, Indore, or Delhi? We offer seamless highway rides.
+                    </p>
+                    <a href="#heroBookingForm" class="text-amber-500 text-xs font-bold hover:underline flex items-center gap-1">Plan Outstation Trip &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fleet Section -->
+    <section id="fleet" class="py-20 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-amber-500 font-bold text-xs uppercase tracking-widest">Our Fleet</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-1">Explore Our Vehicles</h2>
+                <p class="text-slate-400 text-sm mt-2">Well-maintained, spacious, and luxury vehicles tailored to your journey.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Vehicle 1: Kia Carens (White) -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-amber-500/60 transition group flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 bg-slate-950 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80" alt="Kia Carens White" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-md">Featured MPV</span>
+                            <span class="absolute bottom-3 right-3 bg-slate-950/80 text-white text-xs px-2 py-0.5 rounded border border-slate-700">White Edition</span>
+                        </div>
+                        <div class="p-5 space-y-3">
+                            <h3 class="text-xl font-bold text-white">Kia Carens (White)</h3>
+                            <p class="text-xs text-slate-400">Ultra-modern 6/7 seater luxury family car with premium interior comfort.</p>
+                            
+                            <div class="grid grid-cols-2 gap-2 text-xs text-slate-300 pt-2 border-t border-slate-800">
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-users text-amber-500"></i> 6/7 Seater</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-snowflake text-amber-500"></i> Rear AC Vents</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-key text-amber-500"></i> Self / Chauffeur</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-suitcase text-amber-500"></i> Large Boot</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <button onclick="quickBookCar('Kia Carens (White)')" class="w-full bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-slate-200 font-bold py-2.5 rounded-xl border border-slate-700 hover:border-amber-500 transition text-sm flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp"></i> Book Kia Carens
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Vehicle 2: Innova Crysta -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-amber-500/60 transition group flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 bg-slate-950 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80" alt="Innova Crysta" class="w-full h-48 object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-md">King of Comfort</span>
+                        </div>
+                        <div class="p-5 space-y-3">
+                            <h3 class="text-xl font-bold text-white">Innova Crysta</h3>
+                            <p class="text-xs text-slate-400">The ultimate luxury ride for outstation long trips, family tours, and events.</p>
+                            
+                            <div class="grid grid-cols-2 gap-2 text-xs text-slate-300 pt-2 border-t border-slate-800">
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-users text-amber-500"></i> 7 Seater</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-snowflake text-amber-500"></i> Dual Climate AC</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-couch text-amber-500"></i> Captain Seats</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-shield text-amber-500"></i> Smooth Highway</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <button onclick="quickBookCar('Innova Crysta')" class="w-full bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-slate-200 font-bold py-2.5 rounded-xl border border-slate-700 hover:border-amber-500 transition text-sm flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp"></i> Book Innova Crysta
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Vehicle 3: Maruti Ertiga -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-amber-500/60 transition group flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 bg-slate-950 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80" alt="Maruti Ertiga" class="w-full h-48 object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-md">Best Budget SUV</span>
+                        </div>
+                        <div class="p-5 space-y-3">
+                            <h3 class="text-xl font-bold text-white">Maruti Ertiga</h3>
+                            <p class="text-xs text-slate-400">Economical & spacious 6-seater for comfortable city & outstation travel.</p>
+                            
+                            <div class="grid grid-cols-2 gap-2 text-xs text-slate-300 pt-2 border-t border-slate-800">
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-users text-amber-500"></i> 6/7 Seater</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-snowflake text-amber-500"></i> Powerful AC</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-gas-pump text-amber-500"></i> Highly Mileage</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-tag text-amber-500"></i> Affordable</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <button onclick="quickBookCar('Maruti Ertiga')" class="w-full bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-slate-200 font-bold py-2.5 rounded-xl border border-slate-700 hover:border-amber-500 transition text-sm flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp"></i> Book Ertiga
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Vehicle 4: Swift Dzire -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-amber-500/60 transition group flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 bg-slate-950 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80" alt="Swift Dzire" class="w-full h-48 object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-md">Compact Sedan</span>
+                        </div>
+                        <div class="p-5 space-y-3">
+                            <h3 class="text-xl font-bold text-white">Swift Dzire</h3>
+                            <p class="text-xs text-slate-400">Best sedan for small families, fast local commutes, and airport pickups.</p>
+                            
+                            <div class="grid grid-cols-2 gap-2 text-xs text-slate-300 pt-2 border-t border-slate-800">
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-users text-amber-500"></i> 4 Seater</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-snowflake text-amber-500"></i> Chilled AC</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-suitcase text-amber-500"></i> 2 Luggage Bags</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-car-side text-amber-500"></i> Smooth Ride</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <button onclick="quickBookCar('Swift Dzire')" class="w-full bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-slate-200 font-bold py-2.5 rounded-xl border border-slate-700 hover:border-amber-500 transition text-sm flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp"></i> Book Dzire
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="py-20 bg-slate-900 border-t border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-amber-500 font-bold text-xs uppercase tracking-widest">Why Raj Laxmi Travels</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-1">Why Choose Us?</h2>
+                <p class="text-slate-400 text-sm mt-2">We strive to give you the safest and most comfortable rental experience in Panna.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 text-center space-y-3">
+                    <div class="w-16 h-16 bg-amber-500/10 text-amber-500 rounded-2xl flex items-center justify-center text-3xl mx-auto">
+                        <i class="fa-solid fa-pump-soap"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Sanitized Cars</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Every vehicle is thoroughly cleaned and disinfected before every handover for your health and safety.
+                    </p>
+                </div>
+
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 text-center space-y-3">
+                    <div class="w-16 h-16 bg-amber-500/10 text-amber-500 rounded-2xl flex items-center justify-center text-3xl mx-auto">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">24×7 Support</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Round-the-clock emergency support and instant phone assistance wherever you are on the road.
+                    </p>
+                </div>
+
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 text-center space-y-3">
+                    <div class="w-16 h-16 bg-amber-500/10 text-amber-500 rounded-2xl flex items-center justify-center text-3xl mx-auto">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Affordable Prices</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Transparent per-km and daily rates without hidden fees. Get the best value for your hard-earned money.
+                    </p>
+                </div>
+
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 text-center space-y-3">
+                    <div class="w-16 h-16 bg-amber-500/10 text-amber-500 rounded-2xl flex items-center justify-center text-3xl mx-auto">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Instant Booking</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Zero hassle! Pick your car, share trip details on WhatsApp, and confirm your car reservation in minutes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section id="reviews" class="py-20 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-amber-500 font-bold text-xs uppercase tracking-widest">Testimonials</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-1">What Our Clients Say</h2>
+                <p class="text-slate-400 text-sm mt-2">Real feedback from satisfied customers in Panna & outstation travelers.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl space-y-4">
+                    <div class="flex text-amber-500 text-sm gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-300 text-sm italic">
+                        "Took Kia Carens for a 3-day family trip from Panna to Khajuraho & Satna. Vehicle condition was 10/10 brand new, clean, and extremely smooth ride."
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-slate-800">
+                        <div class="w-10 h-10 bg-amber-500 text-slate-950 rounded-full flex items-center justify-center font-bold">AK</div>
+                        <div>
+                            <h4 class="text-sm font-bold text-white">Amit Kumar</h4>
+                            <span class="text-[11px] text-slate-400">Panna Resident</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl space-y-4">
+                    <div class="flex text-amber-500 text-sm gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-300 text-sm italic">
+                        "Best self-drive car rental service near Shanvi Landmark! Easy process, minimal documentation, and very polite owner."
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-slate-800">
+                        <div class="w-10 h-10 bg-amber-500 text-slate-950 rounded-full flex items-center justify-center font-bold">VS</div>
+                        <div>
+                            <h4 class="text-sm font-bold text-white">Vikram Singh</h4>
+                            <span class="text-[11px] text-slate-400">Outstation Traveler</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl space-y-4">
+                    <div class="flex text-amber-500 text-sm gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-300 text-sm italic">
+                        "Booked Innova Crysta with driver for airport drop. Driver was on time, super polite and drove very safely. Highly recommended Raj Laxmi Travels!"
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-slate-800">
+                        <div class="w-10 h-10 bg-amber-500 text-slate-950 rounded-full flex items-center justify-center font-bold">RP</div>
+                        <div>
+                            <h4 class="text-sm font-bold text-white">Ritu Patel</h4>
+                            <span class="text-[11px] text-slate-400">Local Tourist</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Google Maps Section -->
+    <section id="contact" class="py-20 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid lg:grid-cols-12 gap-12">
+                <!-- Contact Details -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <span class="text-amber-500 font-bold text-xs uppercase tracking-widest">Get In Touch</span>
+                        <h2 class="text-3xl font-extrabold text-white mt-1">Visit or Call Us</h2>
+                        <p class="text-slate-400 text-sm mt-2">Have questions? Want to book offline? Reach out to us anytime.</p>
+                    </div>
+
+                    <div class="space-y-4 text-sm">
+                        <!-- Address -->
+                        <div class="flex items-start gap-4 p-4 bg-slate-950 rounded-2xl border border-slate-800">
+                            <div class="w-10 h-10 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Office Address</h4>
+                                <p class="text-slate-300 mt-0.5">Near Shanvi Landmark, Gehra, Panna, Madhya Pradesh - 488001</p>
+                                <a href="https://maps.app.goo.gl/aF2rVJE6LPWLSpRu6" target="_blank" class="text-amber-500 text-xs font-bold hover:underline inline-flex items-center gap-1 mt-2">
+                                    Open in Google Maps &rarr;
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Phones -->
+                        <div class="flex items-start gap-4 p-4 bg-slate-950 rounded-2xl border border-slate-800">
+                            <div class="w-10 h-10 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Calling Numbers</h4>
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 mt-1 font-semibold text-amber-400">
+                                    <a href="tel:9303418620" class="hover:underline">+91 93034 18620</a>
+                                    <span class="text-slate-600">|</span>
+                                    <a href="tel:7999647528" class="hover:underline">+91 79996 47528</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- WhatsApp & Insta -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <a href="https://wa.me/919303418620" target="_blank" class="flex items-center gap-3 p-4 bg-slate-950 rounded-2xl border border-slate-800 hover:border-green-500 transition">
+                                <i class="fa-brands fa-whatsapp text-green-500 text-2xl"></i>
+                                <div>
+                                    <h5 class="text-xs text-slate-400">WhatsApp</h5>
+                                    <span class="text-sm font-bold text-white">9303418620</span>
+                                </div>
+                            </a>
+
+                            <a href="https://www.instagram.com/rajlaxmitravellers.78?igsh=Yng0bWRqNGtlNGZp" target="_blank" class="flex items-center gap-3 p-4 bg-slate-950 rounded-2xl border border-slate-800 hover:border-pink-500 transition">
+                                <i class="fa-brands fa-instagram text-pink-500 text-2xl"></i>
+                                <div>
+                                    <h5 class="text-xs text-slate-400">Instagram</h5>
+                                    <span class="text-sm font-bold text-white">@rajlaxmitravellers.78</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Map Box -->
+                <div class="lg:col-span-7 flex flex-col justify-between">
+                    <div class="w-full h-[350px] lg:h-full min-h-[320px] bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden relative shadow-xl">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14516.27503803889!2d80.1770!3d24.7200!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3984180d5b4a2f8d%3A0x8e8a15b3c3b00000!2sPanna%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Raj Laxmi Travels Map Location">
+                        </iframe>
+                        <div class="absolute bottom-4 right-4 bg-slate-900/90 text-white text-xs px-3 py-2 rounded-xl border border-slate-700 shadow-lg flex items-center gap-2">
+                            <i class="fa-solid fa-map-pin text-amber-500"></i> Panna, Madhya Pradesh
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sticky Floating Call & WhatsApp Buttons -->
+    <div class="fixed bottom-5 right-5 z-50 flex flex-col gap-3">
+        <!-- Direct WhatsApp Floating Button -->
+        <a href="https://wa.me/919303418620?text=Hello%20Raj%20Laxmi%20Travels,%20I%20want%20to%20inquire%20about%20car%20rental." 
+           target="_blank" 
+           class="w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center text-3xl shadow-2xl transition-transform hover:scale-110 pulse-glow"
+           aria-label="Chat on WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+        <!-- Direct Phone Call Floating Button -->
+        <a href="tel:9303418620" 
+           class="w-14 h-14 bg-amber-500 hover:bg-amber-600 text-slate-950 rounded-full flex items-center justify-center text-2xl shadow-2xl transition-transform hover:scale-110"
+           aria-label="Call Now">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 sm:grid-cols-2 gap-8">
+            <div class="space-y-3 md:col-span-1">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-amber-500 text-slate-950 rounded-lg flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-car-rear"></i>
+                    </div>
+                    <span class="text-lg font-bold text-white">Raj Laxmi Travels</span>
+                </div>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Premium Self Drive & Chauffeur Cabs in Panna, MP. Safe, clean cars & 24/7 service.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold text-sm mb-3">Quick Links</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#home" class="hover:text-amber-500">Home</a></li>
+                    <li><a href="#services" class="hover:text-amber-500">Services</a></li>
+                    <li><a href="#fleet" class="hover:text-amber-500">Our Fleet</a></li>
+                    <li><a href="#why-us" class="hover:text-amber-500">Why Choose Us</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold text-sm mb-3">Our Vehicles</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#fleet" class="hover:text-amber-500">Kia Carens (White)</a></li>
+                    <li><a href="#fleet" class="hover:text-amber-500">Innova Crysta</a></li>
+                    <li><a href="#fleet" class="hover:text-amber-500">Maruti Ertiga</a></li>
+                    <li><a href="#fleet" class="hover:text-amber-500">Swift Dzire</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold text-sm mb-3">Contact Support</h4>
+                <p class="text-xs text-slate-300">Call: +91 93034 18620</p>
+                <p class="text-xs text-slate-300 mt-1">Call: +91 79996 47528</p>
+                <p class="text-xs text-slate-400 mt-2">Near Shanvi Landmark, Gehra, Panna (M.P.)</p>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 border-t border-slate-900 mt-8 pt-6 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>
+                © 2026 Raj Laxmi Travels. All Rights Reserved.
+            </div>
+            <div class="flex gap-4 text-base">
+                <a href="https://www.instagram.com/rajlaxmitravellers.78?igsh=Yng0bWRqNGtlNGZp" target="_blank" class="text-slate-400 hover:text-pink-500"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/919303418620" target="_blank" class="text-slate-400 hover:text-green-500"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="tel:9303418620" class="text-slate-400 hover:text-amber-500"><i class="fa-solid fa-phone"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Code -->
+    <script>
+        // Set default date to today
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date().toISOString().split('T')[0];
+            const dateInput = document.getElementById('travelDate');
+            if(dateInput) dateInput.value = today;
+        });
+
+        // Mobile Menu Toggle Function
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuIcon = document.getElementById('menuIcon');
+            
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            }
+        }
+
+        // Hero Booking Handler
+        function handleHeroBooking(event) {
+            event.preventDefault();
+
+            const rentalType = document.querySelector('input[name="rentalOption"]:checked').value;
+            const pickup = document.getElementById('pickupLoc').value;
+            const drop = document.getElementById('dropLoc').value;
+            const date = document.getElementById('travelDate').value;
+            const car = document.getElementById('carSelect').value;
+
+            const targetPhone = "919303418620";
+
+            const message = `Hello Raj Laxmi Travels! 👋%0A%0AMujhe car booking ki enquiry karni hai:%0A%0A🚗 *Service Type:* ${rentalType}%0A🚘 *Car Choice:* ${car}%0A📍 *Pick-up Location:* ${pickup}%0A🎯 *Drop Location:* ${drop}%0A📅 *Travel Date:* ${date}%0A%0APlease rate aur car availability confirm karein!`;
+
+            const whatsappUrl = `https://wa.me/${targetPhone}?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Quick Book Single Car Card
+        function quickBookCar(carName) {
+            const targetPhone = "919303418620";
+            const message = `Hello Raj Laxmi Travels! 👋%0A%0AMujhe *${carName}* book karni hai. Please rates aur availability details share karein.`;
+            const whatsappUrl = `https://wa.me/${targetPhone}?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        function updateRentalTypeUI() {
+            // Placeholder for custom dynamic UI tweaks if needed
+        }
+    </script>
+</body>
+</html>
