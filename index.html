@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Dynamic PWA Manifest Placeholder -->
+    <!-- PWA Manifest & Service Worker Link -->
     <link id="manifestPlaceholder" rel="manifest">
 
     <style>
@@ -126,7 +126,7 @@
                     From City Rides to Long Drives — <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">We've Got The Perfect Car.</span>
                 </h1>
                 <p class="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                    Explore Panna National Park, Khajuraho, Satna & outstation routes with clean, well-maintained SUVs and Sedans. Available with driver or self-drive options.
+                    Explore Panna National Park, Khajuraho, Satna & outstation routes with clean, well-maintained SUVs, MPVs, and Sedans. Available with driver or self-drive options.
                 </p>
 
                 <div class="grid sm:grid-cols-3 gap-4 pt-4 text-left">
@@ -217,6 +217,8 @@
                                 <select id="carSelect" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:border-amber-500 focus:outline-none">
                                     <option value="Swift Dzire">Swift Dzire (Sedan)</option>
                                     <option value="Baleno">Baleno (Hatchback)</option>
+                                    <option value="Ertiga">Maruti Ertiga (7-Seater)</option>
+                                    <option value="Toyota Rumion">Toyota Rumion / Rumeo</option>
                                     <option value="Kia Carens">Kia Carens (MPV)</option>
                                     <option value="Innova">Innova / Innova Crysta</option>
                                     <option value="Thar">Mahindra Thar (4x4 SUV)</option>
@@ -400,22 +402,44 @@
                             </tr>
                             <tr class="hover:bg-slate-800/40 transition">
                                 <td class="py-4 px-4 sm:px-6 font-bold text-white flex items-center gap-2">
-                                    <i class="fa-solid fa-car-side text-amber-500"></i> Kia Carens
+                                    <i class="fa-solid fa-car-side text-amber-500"></i> Maruti Ertiga
                                 </td>
                                 <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹2,000 <span class="text-[10px] text-slate-400 block font-normal">(180 KM Limit)</span></td>
                                 <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹3,500 <span class="text-[10px] text-slate-400 block font-normal">(360 KM Limit)</span></td>
                                 <td class="py-4 px-4 sm:px-6">₹12 / km</td>
+                                <td class="py-4 px-4 sm:px-6 text-center">
+                                    <button onclick="quickBookCar('Maruti Ertiga')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-3 py-1.5 rounded-lg transition">Book</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/40 transition">
+                                <td class="py-4 px-4 sm:px-6 font-bold text-white flex items-center gap-2">
+                                    <i class="fa-solid fa-car-side text-amber-500"></i> Toyota Rumion (Rumeo)
+                                </td>
+                                <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹2,000 <span class="text-[10px] text-slate-400 block font-normal">(180 KM Limit)</span></td>
+                                <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹3,500 <span class="text-[10px] text-slate-400 block font-normal">(360 KM Limit)</span></td>
+                                <td class="py-4 px-4 sm:px-6">₹12 / km</td>
+                                <td class="py-4 px-4 sm:px-6 text-center">
+                                    <button onclick="quickBookCar('Toyota Rumion')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-3 py-1.5 rounded-lg transition">Book</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/40 transition">
+                                <td class="py-4 px-4 sm:px-6 font-bold text-white flex items-center gap-2">
+                                    <i class="fa-solid fa-car-side text-amber-500"></i> Kia Carens
+                                </td>
+                                <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹2,000 <span class="text-[10px] text-slate-400 block font-normal">(180 KM Limit)</span></td>
+                                <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹3,500 <span class="text-[10px] text-slate-400 block font-normal">(360 KM Limit)</span></td>
+                                <td class="py-4 px-4 sm:px-6 font-bold text-amber-400">₹13 / km</td>
                                 <td class="py-4 px-4 sm:px-6 text-center">
                                     <button onclick="quickBookCar('Kia Carens')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-3 py-1.5 rounded-lg transition">Book</button>
                                 </td>
                             </tr>
                             <tr class="hover:bg-slate-800/40 transition">
                                 <td class="py-4 px-4 sm:px-6 font-bold text-white flex items-center gap-2">
-                                    <i class="fa-solid fa-car-side text-amber-500"></i> Innova
+                                    <i class="fa-solid fa-car-side text-amber-500"></i> Innova / Crysta
                                 </td>
                                 <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹3,000 <span class="text-[10px] text-slate-400 block font-normal">(150 KM Limit)</span></td>
                                 <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹5,500 <span class="text-[10px] text-slate-400 block font-normal">(300 KM Limit)</span></td>
-                                <td class="py-4 px-4 sm:px-6">₹12 / km</td>
+                                <td class="py-4 px-4 sm:px-6 font-bold text-amber-400">₹15 / km</td>
                                 <td class="py-4 px-4 sm:px-6 text-center">
                                     <button onclick="quickBookCar('Innova')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-3 py-1.5 rounded-lg transition">Book</button>
                                 </td>
@@ -426,7 +450,7 @@
                                 </td>
                                 <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹3,000 <span class="text-[10px] text-slate-400 block font-normal">(150 KM Limit)</span></td>
                                 <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹5,500 <span class="text-[10px] text-slate-400 block font-normal">(300 KM Limit)</span></td>
-                                <td class="py-4 px-4 sm:px-6">₹12 / km</td>
+                                <td class="py-4 px-4 sm:px-6 font-bold text-amber-400">₹15 / km</td>
                                 <td class="py-4 px-4 sm:px-6 text-center">
                                     <button onclick="quickBookCar('Mahindra Thar')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-3 py-1.5 rounded-lg transition">Book</button>
                                 </td>
@@ -437,7 +461,7 @@
                                 </td>
                                 <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹3,000 <span class="text-[10px] text-slate-400 block font-normal">(150 KM Limit)</span></td>
                                 <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹5,500 <span class="text-[10px] text-slate-400 block font-normal">(300 KM Limit)</span></td>
-                                <td class="py-4 px-4 sm:px-6">₹12 / km</td>
+                                <td class="py-4 px-4 sm:px-6 font-bold text-amber-400">₹15 / km</td>
                                 <td class="py-4 px-4 sm:px-6 text-center">
                                     <button onclick="quickBookCar('Mahindra Scorpio')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-3 py-1.5 rounded-lg transition">Book</button>
                                 </td>
@@ -447,7 +471,7 @@
                 </div>
             </div>
 
-            <!-- Vehicle Cards Display (Prices removed from cards) -->
+            <!-- Vehicle Cards Display -->
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Vehicle 1: Dzire -->
                 <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-amber-500/60 transition group flex flex-col justify-between">
@@ -470,7 +494,49 @@
                     </div>
                 </div>
 
-                <!-- Vehicle 2: Kia Carens -->
+                <!-- Vehicle 2: Ertiga -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-amber-500/60 transition group flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 bg-slate-950 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Maruti Ertiga" 
+                                 class="w-full h-48 object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-md">Family MPV</span>
+                        </div>
+                        <div class="p-5 space-y-2">
+                            <h3 class="text-xl font-bold text-white">Maruti Ertiga</h3>
+                            <p class="text-xs text-slate-400">Popular 7-seater MPV with spacious seating, ideal for outstation family trips.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <button onclick="quickBookCar('Maruti Ertiga')" class="w-full bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-slate-200 font-bold py-2.5 rounded-xl border border-slate-700 hover:border-amber-500 transition text-sm flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp"></i> Book Ertiga
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Vehicle 3: Rumion / Rumeo -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-amber-500/60 transition group flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 bg-slate-950 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Toyota Rumion Rumeo" 
+                                 class="w-full h-48 object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-md">7-Seater MPV</span>
+                        </div>
+                        <div class="p-5 space-y-2">
+                            <h3 class="text-xl font-bold text-white">Toyota Rumion / Rumeo</h3>
+                            <p class="text-xs text-slate-400">Premium 7-seater vehicle with Toyota reliability and smooth driving comfort.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <button onclick="quickBookCar('Toyota Rumion')" class="w-full bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-slate-200 font-bold py-2.5 rounded-xl border border-slate-700 hover:border-amber-500 transition text-sm flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp"></i> Book Rumion
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Vehicle 4: Kia Carens -->
                 <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-amber-500/60 transition group flex flex-col justify-between">
                     <div>
                         <div class="relative h-48 bg-slate-950 overflow-hidden">
@@ -481,7 +547,7 @@
                         </div>
                         <div class="p-5 space-y-2">
                             <h3 class="text-xl font-bold text-white">Kia Carens</h3>
-                            <p class="text-xs text-slate-400">Spacious 6/7 seater vehicle with premium seating and excellent comfort for families.</p>
+                            <p class="text-xs text-slate-400">Spacious 6/7 seater vehicle with premium seating and extra kilometer limit (₹13/km).</p>
                         </div>
                     </div>
                     <div class="p-5 pt-0">
@@ -491,7 +557,7 @@
                     </div>
                 </div>
 
-                <!-- Vehicle 3: Innova -->
+                <!-- Vehicle 5: Innova -->
                 <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-amber-500/60 transition group flex flex-col justify-between">
                     <div>
                         <div class="relative h-48 bg-slate-950 overflow-hidden">
@@ -502,7 +568,7 @@
                         </div>
                         <div class="p-5 space-y-2">
                             <h3 class="text-xl font-bold text-white">Innova / Crysta</h3>
-                            <p class="text-xs text-slate-400">Powerful 7-seater SUV with top safety features and long route reliability.</p>
+                            <p class="text-xs text-slate-400">Powerful 7-seater SUV with top safety features and long route reliability (₹15/km).</p>
                         </div>
                     </div>
                     <div class="p-5 pt-0">
@@ -624,13 +690,18 @@
     <!-- Customer Reviews Section -->
     <section id="reviews" class="py-20 bg-slate-950">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-amber-500 font-bold text-xs uppercase tracking-widest">Testimonials</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-1">What Our Clients Say</h2>
-                <p class="text-slate-400 text-sm mt-2">Real feedback from satisfied customers in Panna & outstation travelers.</p>
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                <div class="text-center md:text-left">
+                    <span class="text-amber-500 font-bold text-xs uppercase tracking-widest">Testimonials</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-1">What Our Clients Say</h2>
+                    <p class="text-slate-400 text-sm mt-2">Real feedback from satisfied customers in Panna & outstation travelers.</p>
+                </div>
+                <button onclick="openReviewModal()" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-5 py-2.5 rounded-xl text-xs transition flex items-center justify-center gap-2 self-center md:self-auto">
+                    <i class="fa-solid fa-pen-to-square"></i> Write a Review
+                </button>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-6">
+            <div id="reviewsGrid" class="grid md:grid-cols-3 gap-6">
                 <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl space-y-4">
                     <div class="flex text-amber-500 text-sm gap-1">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -681,6 +752,50 @@
             </div>
         </div>
     </section>
+
+    <!-- Review Submission Modal -->
+    <div id="reviewModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-md w-full p-6 space-y-5 shadow-2xl relative">
+            <button onclick="closeReviewModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div class="border-b border-slate-800 pb-3">
+                <h3 class="text-xl font-extrabold text-white">Leave a Review</h3>
+                <p class="text-xs text-slate-400 mt-0.5">Share your trip experience with Raj Laxmi Travels</p>
+            </div>
+
+            <form onsubmit="handleReviewSubmit(event)" class="space-y-4 text-xs">
+                <div>
+                    <label class="block text-slate-300 font-bold mb-1">Your Name</label>
+                    <input type="text" id="revName" required placeholder="e.g. Rahul Sharma" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:border-amber-500 focus:outline-none">
+                </div>
+
+                <div>
+                    <label class="block text-slate-300 font-bold mb-1">Role / Location</label>
+                    <input type="text" id="revRole" placeholder="e.g. Local Tourist / Panna Resident" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:border-amber-500 focus:outline-none">
+                </div>
+
+                <div>
+                    <label class="block text-slate-300 font-bold mb-1">Rating</label>
+                    <select id="revRating" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-amber-400 font-bold focus:border-amber-500 focus:outline-none">
+                        <option value="5">⭐⭐⭐⭐⭐ (5/5 Excellent)</option>
+                        <option value="4">⭐⭐⭐⭐ (4/5 Very Good)</option>
+                        <option value="3">⭐⭐⭐ (3/5 Average)</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-slate-300 font-bold mb-1">Your Feedback</label>
+                    <textarea id="revComment" rows="3" required placeholder="Write a few lines about our car condition, driver behaviour, or rental service..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:border-amber-500 focus:outline-none"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold py-3 rounded-xl transition text-xs">
+                    Submit Review
+                </button>
+            </form>
+        </div>
+    </div>
 
     <!-- Contact & Google Maps Section -->
     <section id="contact" class="py-20 bg-slate-900 border-t border-slate-800">
@@ -809,7 +924,7 @@
                 <ul class="space-y-2 text-xs">
                     <li><a href="#fleet" class="hover:text-amber-500">Swift Dzire</a></li>
                     <li><a href="#fleet" class="hover:text-amber-500">Baleno</a></li>
-                    <li><a href="#fleet" class="hover:text-amber-500">Kia Carens</a></li>
+                    <li><a href="#fleet" class="hover:text-amber-500">Ertiga / Rumion / Carens</a></li>
                     <li><a href="#fleet" class="hover:text-amber-500">Innova / Thar / Scorpio</a></li>
                 </ul>
             </div>
@@ -867,6 +982,26 @@
         const manifestUrl = URL.createObjectURL(blobManifest);
         document.getElementById('manifestPlaceholder').setAttribute('href', manifestUrl);
 
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(() => console.log("sw.js Service Worker Registered!"))
+                .catch(() => {
+                    const swContent = `
+                        const CACHE_NAME = 'rajlaxmi-v1';
+                        self.addEventListener('install', e => {
+                            e.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(['./'])));
+                        });
+                        self.addEventListener('fetch', e => {
+                            e.respondWith(caches.match(e.request).then(response => response || fetch(e.request)));
+                        });
+                    `;
+                    const blobSW = new Blob([swContent], { type: 'text/javascript' });
+                    const swUrl = URL.createObjectURL(blobSW);
+                    navigator.serviceWorker.register(swUrl);
+                });
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             const today = new Date().toISOString().split('T')[0];
             const dateInput = document.getElementById('travelDate');
@@ -909,6 +1044,52 @@
 
                 submitBtn.innerHTML = `<i class="fa-brands fa-whatsapp text-lg"></i> Check Availability & Book`;
             }
+        }
+
+        // Review Modal Handlers
+        function openReviewModal() {
+            document.getElementById('reviewModal').classList.remove('hidden');
+        }
+        function closeReviewModal() {
+            document.getElementById('reviewModal').classList.add('hidden');
+        }
+
+        function handleReviewSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('revName').value;
+            const role = document.getElementById('revRole').value || 'Happy Customer';
+            const rating = parseInt(document.getElementById('revRating').value);
+            const comment = document.getElementById('revComment').value;
+
+            const initials = name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2) || 'CU';
+
+            let starsHtml = '';
+            for(let i = 0; i < rating; i++) {
+                starsHtml += '<i class="fa-solid fa-star"></i>';
+            }
+
+            const newReviewCard = document.createElement('div');
+            newReviewCard.className = 'bg-slate-900 border border-amber-500/30 p-6 rounded-2xl space-y-4 animate-fade-in';
+            newReviewCard.innerHTML = `
+                <div class="flex text-amber-500 text-sm gap-1">
+                    ${starsHtml}
+                </div>
+                <p class="text-slate-300 text-sm italic">
+                    "${comment}"
+                </p>
+                <div class="flex items-center gap-3 pt-2 border-t border-slate-800">
+                    <div class="w-10 h-10 bg-amber-500 text-slate-950 rounded-full flex items-center justify-center font-bold">${initials}</div>
+                    <div>
+                        <h4 class="text-sm font-bold text-white">${name}</h4>
+                        <span class="text-[11px] text-slate-400">${role}</span>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('reviewsGrid').prepend(newReviewCard);
+            closeReviewModal();
+            alert("Thank you! Your review has been added.");
+            event.target.reset();
         }
 
         // Terms & Conditions Modal Controls
