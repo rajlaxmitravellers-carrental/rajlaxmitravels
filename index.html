@@ -1,463 +1,466 @@
 <!DOCTYPE html>
-<html lang="hi" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raj Laxmi Travels - Self Drive & Chauffeur Car Rental in Panna</title>
+    <title>Raj Laxmi Travels - Best Car Rental & Taxi Service in Panna</title>
     
-    <!-- PWA / Web App Meta Tags -->
-    <meta name="theme-color" content="#0f172a">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Raj Laxmi Travels">
-    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3202/3202021.png">
-
-    <!-- Web App Manifest (Inline Blob) -->
-    <link rel="manifest" id="manifestPlaceholder">
-
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                    },
-                    colors: {
-                        amber: {
-                            500: '#f59e0b',
-                            600: '#d97706',
-                            700: '#b45309',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Dynamic PWA Manifest Placeholder -->
+    <link id="manifestPlaceholder" rel="manifest">
+
     <style>
-        .glass-card {
-            background: rgba(15, 23, 42, 0.75);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 15px rgba(34, 197, 94, 0.4); }
+            50% { box-shadow: 0 0 25px rgba(34, 197, 94, 0.8); }
         }
         .pulse-glow {
-            animation: pulse-glow-anim 2s infinite;
-        }
-        @keyframes pulse-glow-anim {
-            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+            animation: pulseGlow 2s infinite;
         }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-slate-900">
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-amber-500 selection:text-slate-950">
 
     <!-- Top Announcement Bar -->
-    <div class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 text-slate-950 px-4 py-2 text-xs md:text-sm font-bold text-center flex justify-between items-center max-w-full overflow-hidden">
-        <div class="max-w-7xl mx-auto w-full flex justify-between items-center">
-            <span class="flex items-center gap-2">
-                <i class="fa-solid fa-location-dot"></i> Near Shanvi Landmark, Gehra, Panna (M.P.)
-            </span>
-            <div class="hidden md:flex items-center gap-6">
-                <a href="tel:9303418620" class="hover:underline flex items-center gap-1"><i class="fa-solid fa-phone"></i> +91 93034 18620</a>
-                <a href="https://www.instagram.com/rajlaxmitravellers.78?igsh=Yng0bWRqNGtlNGZp" target="_blank" class="hover:underline flex items-center gap-1"><i class="fa-brands fa-instagram"></i> @rajlaxmitravellers.78</a>
+    <div class="bg-slate-900 border-b border-slate-800 text-xs text-slate-300 py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 text-center sm:text-left">
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-amber-500"></i> Near Shanvi Landmark, Gehra, Panna (M.P.)</span>
+                <span class="hidden md:flex items-center gap-1.5"><i class="fa-solid fa-clock text-amber-500"></i> 24x7 Service</span>
+            </div>
+            <div class="flex items-center gap-4 font-semibold">
+                <a href="tel:9303418620" class="hover:text-amber-400 transition flex items-center gap-1"><i class="fa-solid fa-phone text-amber-500"></i> +91 93034 18620</a>
+                <a href="https://www.instagram.com/rajlaxmitravellers.78?igsh=Yng0bWRqNGtlNGZp" target="_blank" class="text-slate-400 hover:text-pink-500 transition text-sm ml-2"><i class="fa-brands fa-instagram"></i></a>
             </div>
         </div>
     </div>
 
     <!-- Navigation Bar -->
-    <header class="bg-slate-900/90 backdrop-blur-md border-b border-slate-800 sticky top-0 z-40">
-        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-            <!-- Logo -->
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-12 h-12 bg-gradient-to-br from-amber-500 to-amber-700 rounded-xl flex items-center justify-center shadow-lg shadow-amber-500/20 group-hover:scale-105 transition">
-                    <i class="fa-solid fa-car-rear text-2xl text-slate-950"></i>
+    <header class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur-md border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="#home" class="flex items-center gap-2.5">
+                <div class="w-10 h-10 bg-amber-500 text-slate-950 rounded-xl flex items-center justify-center font-black text-xl shadow-lg shadow-amber-500/20">
+                    <i class="fa-solid fa-car-side"></i>
                 </div>
                 <div>
-                    <span class="text-xl md:text-2xl font-black tracking-tight text-white block leading-none">
-                        RAJ LAXMI <span class="text-amber-500">TRAVELS</span>
-                    </span>
-                    <span class="text-[10px] tracking-widest text-slate-400 font-semibold uppercase">Panna, Madhya Pradesh</span>
+                    <span class="text-xl font-black tracking-tight text-white block leading-none">RAJ LAXMI</span>
+                    <span class="text-[10px] font-bold text-amber-500 tracking-widest uppercase block mt-0.5">Travels & Rental</span>
                 </div>
             </a>
 
-            <!-- Desktop Links -->
-            <nav class="hidden md:flex items-center gap-8 font-semibold text-sm">
-                <a href="#home" class="hover:text-amber-500 transition">Home</a>
-                <a href="#services" class="hover:text-amber-500 transition">Services</a>
-                <a href="#fleet" class="hover:text-amber-500 transition">Our Fleet</a>
-                <a href="#why-us" class="hover:text-amber-500 transition">Why Us</a>
-                <a href="#reviews" class="hover:text-amber-500 transition">Reviews</a>
-                <a href="#contact" class="hover:text-amber-500 transition">Contact</a>
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-300">
+                <a href="#home" class="hover:text-amber-400 transition">Home</a>
+                <a href="#services" class="hover:text-amber-400 transition">Services</a>
+                <a href="#fleet" class="hover:text-amber-400 transition">Our Fleet & Pricing</a>
+                <a href="#why-us" class="hover:text-amber-400 transition">Why Us</a>
+                <a href="#reviews" class="hover:text-amber-400 transition">Reviews</a>
+                <a href="#contact" class="hover:text-amber-400 transition">Contact</a>
             </nav>
 
-            <!-- Call Header Action Button & PWA Install Button -->
-            <div class="hidden sm:flex items-center gap-3">
-                <button id="pwaInstallBtnNav" onclick="installPWAApp()" class="hidden bg-slate-800 border border-amber-500/50 text-amber-400 hover:bg-amber-500 hover:text-slate-950 font-bold px-4 py-2.5 rounded-xl transition text-xs flex items-center gap-2">
+            <div class="flex items-center gap-3">
+                <button id="pwaInstallBtnNav" onclick="installPWAApp()" class="hidden sm:flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-amber-400 border border-amber-500/30 text-xs font-bold px-3.5 py-2 rounded-xl transition">
                     <i class="fa-solid fa-download"></i> Install App
                 </button>
-                <a href="tel:9303418620" class="bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-bold px-5 py-2.5 rounded-xl hover:from-amber-400 hover:to-amber-500 transition shadow-lg shadow-amber-500/20 text-sm flex items-center gap-2">
-                    <i class="fa-solid fa-phone"></i> Call Now
+                <a href="https://wa.me/919303418620" target="_blank" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-amber-500/10 transition flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> Book Now
                 </a>
+                <button onclick="toggleMobileMenu()" class="lg:hidden text-slate-300 hover:text-white p-2 text-xl" aria-label="Toggle Navigation">
+                    <i id="menuIcon" class="fa-solid fa-bars"></i>
+                </button>
             </div>
-
-            <!-- Mobile Menu Toggle Button -->
-            <button id="menuToggle" class="md:hidden text-2xl text-slate-300 focus:outline-none" onclick="toggleMobileMenu()">
-                <i class="fa-solid fa-bars" id="menuIcon"></i>
-            </button>
         </div>
 
-        <!-- Mobile Menu Nav -->
-        <div id="mobileMenu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3 font-semibold text-slate-200 text-sm">
-            <a href="#home" onclick="toggleMobileMenu()" class="block py-2 hover:text-amber-500 border-b border-slate-800">Home</a>
-            <a href="#services" onclick="toggleMobileMenu()" class="block py-2 hover:text-amber-500 border-b border-slate-800">Services</a>
-            <a href="#fleet" onclick="toggleMobileMenu()" class="block py-2 hover:text-amber-500 border-b border-slate-800">Our Fleet</a>
-            <a href="#why-us" onclick="toggleMobileMenu()" class="block py-2 hover:text-amber-500 border-b border-slate-800">Why Choose Us</a>
-            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 hover:text-amber-500">Contact & Map</a>
-            
-            <div class="pt-2 flex flex-col gap-2">
-                <button id="pwaInstallBtnMobile" onclick="installPWAApp()" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-extrabold py-3 rounded-xl flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-mobile-screen-button text-lg"></i> Install Raj Laxmi App
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-slate-900 border-b border-slate-800 px-6 py-4 space-y-3 text-sm font-medium">
+            <a href="#home" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-1">Home</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-1">Services</a>
+            <a href="#fleet" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-1">Our Fleet & Pricing</a>
+            <a href="#why-us" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-1">Why Us</a>
+            <a href="#reviews" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-1">Reviews</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-1">Contact</a>
+            <div class="pt-2 border-t border-slate-800 flex flex-col gap-2">
+                <button onclick="installPWAApp(); toggleMobileMenu();" class="w-full bg-slate-800 text-amber-400 border border-amber-500/30 text-xs font-bold py-2.5 rounded-xl flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-download"></i> Install Web App
                 </button>
-                <a href="tel:9303418620" class="w-full text-center bg-slate-800 text-slate-200 font-bold py-2.5 rounded-xl border border-slate-700">Call +91 93034 18620</a>
             </div>
         </div>
     </header>
 
-    <!-- App Install Banner Popup (Mobile Prompt) -->
-    <div id="pwaBanner" class="hidden fixed top-16 inset-x-4 z-50 bg-slate-900 border-2 border-amber-500 p-4 rounded-2xl shadow-2xl flex justify-between items-center max-w-lg mx-auto">
-        <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-amber-500 text-slate-950 rounded-xl flex items-center justify-center font-bold text-xl">
-                <i class="fa-solid fa-car"></i>
-            </div>
-            <div>
-                <h4 class="text-sm font-bold text-white">Install Raj Laxmi Travels App</h4>
-                <p class="text-[11px] text-slate-400">Fast 1-click booking on your phone!</p>
-            </div>
-        </div>
+    <!-- App Install Banner (PWA Notification) -->
+    <div id="pwaBanner" class="hidden bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 px-4 py-2.5 text-xs font-bold flex items-center justify-between border-b border-amber-400 shadow-md">
         <div class="flex items-center gap-2">
-            <button onclick="installPWAApp()" class="bg-amber-500 text-slate-950 font-bold px-3 py-1.5 rounded-lg text-xs">Install</button>
-            <button onclick="dismissPWABanner()" class="text-slate-400 hover:text-white px-2 py-1"><i class="fa-solid fa-xmark"></i></button>
+            <i class="fa-solid fa-mobile-screen-button text-base"></i>
+            <span>Install Raj Laxmi Travels App for faster bookings!</span>
+        </div>
+        <div class="flex items-center gap-3">
+            <button onclick="installPWAApp()" class="bg-slate-950 text-amber-400 hover:bg-slate-900 px-3 py-1 rounded-lg text-xs font-extrabold transition">Install</button>
+            <button onclick="dismissPWABanner()" class="text-slate-950 hover:text-slate-800 text-sm font-bold"><i class="fa-solid fa-xmark"></i></button>
         </div>
     </div>
 
     <!-- Hero Section -->
-    <section id="home" class="relative min-h-[90vh] flex items-center py-16 px-4 overflow-hidden bg-slate-950">
-        <!-- Background Hero Image with dark gradient overlay -->
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80" alt="Luxury Car" class="w-full h-full object-cover object-center opacity-30" onerror="this.style.display='none';">
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent"></div>
-            <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/70 to-transparent"></div>
-        </div>
-
-        <div class="max-w-7xl mx-auto w-full relative z-10 grid lg:grid-cols-12 gap-12 items-center">
-            <!-- Left Headline -->
-            <div class="lg:col-span-7 space-y-6">
-                <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-400 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider">
-                    <i class="fa-solid fa-crown"></i> Panna's Most Trusted Rental Cabs
+    <section id="home" class="relative py-12 md:py-20 overflow-hidden bg-slate-950 border-b border-slate-800/60">
+        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#f59e0b_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold">
+                    <span class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span>
+                    Premium Chauffeur & Self Drive Services in Panna
                 </div>
-                
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
-                    Premium <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">Self Drive</span> & Chauffeur Car Rental in Panna
+                <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+                    From City Rides to Long Drives — <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">We've Got The Perfect Car.</span>
                 </h1>
-
-                <!-- Special Main Line Highlight -->
-                <div class="p-4 rounded-xl bg-slate-900/80 border-l-4 border-amber-500 text-amber-300 font-bold text-lg md:text-xl italic shadow-lg">
-                    "From City Rides to Long Drives — We've Got the Perfect Car for Every Journey."
-                </div>
-
-                <p class="text-slate-300 text-base md:text-lg leading-relaxed max-w-2xl">
-                    Experience unmatched comfort with Raj Laxmi Travels. Clean, sanitized brand-new cars available for local rentals, outstation trips, airport transfers, and self-drive adventures across MP & India.
+                <p class="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                    Explore Panna National Park, Khajuraho, Satna & outstation routes with clean, well-maintained SUVs and Sedans. Available with driver or self-drive options.
                 </p>
 
-                <!-- Feature badges -->
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2">
-                    <div class="flex items-center gap-3 bg-slate-900/60 border border-slate-800 p-3 rounded-xl">
-                        <i class="fa-solid fa-key text-amber-500 text-xl"></i>
-                        <span class="text-xs font-bold text-slate-200">Self Drive & Driver Available</span>
+                <div class="grid sm:grid-cols-3 gap-4 pt-4 text-left">
+                    <div class="p-3.5 bg-slate-900/80 rounded-xl border border-slate-800">
+                        <div class="text-amber-500 font-bold text-lg">100%</div>
+                        <div class="text-xs text-slate-400">Sanitized Cars</div>
                     </div>
-                    <div class="flex items-center gap-3 bg-slate-900/60 border border-slate-800 p-3 rounded-xl">
-                        <i class="fa-solid fa-shield-halved text-amber-500 text-xl"></i>
-                        <span class="text-xs font-bold text-slate-200">Clean & Sanitized Fleet</span>
+                    <div class="p-3.5 bg-slate-900/80 rounded-xl border border-slate-800">
+                        <div class="text-amber-500 font-bold text-lg">24/7</div>
+                        <div class="text-xs text-slate-400">Roadside Assistance</div>
                     </div>
-                    <div class="flex items-center gap-3 bg-slate-900/60 border border-slate-800 p-3 rounded-xl col-span-2 sm:col-span-1">
-                        <i class="fa-solid fa-clock text-amber-500 text-xl"></i>
-                        <span class="text-xs font-bold text-slate-200">24/7 Pickup Support</span>
+                    <div class="p-3.5 bg-slate-900/80 rounded-xl border border-slate-800">
+                        <div class="text-amber-500 font-bold text-lg">Best Rates</div>
+                        <div class="text-xs text-slate-400">Transparent Pricing</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Right Quick Booking Card -->
+            <!-- Quick Booking Form Card -->
             <div class="lg:col-span-5">
-                <div class="glass-card p-6 md:p-8 rounded-2xl shadow-2xl relative border border-slate-700/60">
-                    <div class="flex items-center justify-between mb-6">
-                        <h2 class="text-2xl font-bold text-white flex items-center gap-2">
-                            <i class="fa-solid fa-bolt text-amber-500"></i> Direct Booking
+                <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-2xl backdrop-blur-xl relative">
+                    <div class="flex items-center justify-between mb-4 border-b border-slate-800 pb-3">
+                        <h2 class="text-lg font-extrabold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-calendar-check text-amber-500"></i> Quick Car Enquiry
                         </h2>
-                        <span class="bg-green-500/20 text-green-400 text-xs px-2.5 py-1 rounded-full border border-green-500/30 font-semibold">Instant Quote</span>
+                        <span class="text-[11px] font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">Instant WhatsApp</span>
                     </div>
 
-                    <form id="heroBookingForm" onsubmit="handleHeroBooking(event)" class="space-y-4">
-                        <!-- Service Type Radio -->
-                        <div class="grid grid-cols-2 gap-3 mb-2">
-                            <label class="cursor-pointer">
-                                <input type="radio" name="rentalOption" value="Chauffeur Driven" checked class="peer hidden">
-                                <div class="text-center py-2.5 px-3 rounded-xl border border-slate-700 bg-slate-800/80 text-xs font-bold text-slate-300 peer-checked:bg-amber-500 peer-checked:text-slate-950 peer-checked:border-amber-500 transition">
-                                    <i class="fa-solid fa-user-tie mr-1"></i> With Driver
-                                </div>
-                            </label>
-                            <label class="cursor-pointer">
-                                <input type="radio" name="rentalOption" value="Self Drive" class="peer hidden">
-                                <div class="text-center py-2.5 px-3 rounded-xl border border-slate-700 bg-slate-800/80 text-xs font-bold text-slate-300 peer-checked:bg-amber-500 peer-checked:text-slate-950 peer-checked:border-amber-500 transition">
-                                    <i class="fa-solid fa-steering-wheel mr-1"></i> Self Drive
-                                </div>
-                            </label>
-                        </div>
-
+                    <form onsubmit="handleHeroBooking(event)" class="space-y-4 text-xs">
                         <div>
-                            <label class="block text-xs font-semibold text-slate-300 mb-1">Pick-up Location / City</label>
-                            <div class="relative">
-                                <i class="fa-solid fa-circle-dot text-amber-500 absolute left-3.5 top-3.5 text-sm"></i>
-                                <input type="text" id="pickupLoc" placeholder="e.g. Gehra, Panna / Airport" required class="w-full bg-slate-900 border border-slate-700 rounded-xl py-2.5 pl-10 pr-3 text-sm text-white focus:outline-none focus:border-amber-500 transition">
+                            <label class="block text-slate-300 font-bold mb-1.5">Rental Option</label>
+                            <div class="grid grid-cols-2 gap-2">
+                                <label class="flex items-center justify-center gap-2 p-2.5 bg-slate-950 border border-slate-800 rounded-xl cursor-pointer hover:border-amber-500/50 transition">
+                                    <input type="radio" name="rentalOption" value="With Driver" checked onchange="toggleRentalFields()" class="accent-amber-500">
+                                    <span class="font-bold text-slate-200">With Driver</span>
+                                </label>
+                                <label class="flex items-center justify-center gap-2 p-2.5 bg-slate-950 border border-slate-800 rounded-xl cursor-pointer hover:border-amber-500/50 transition">
+                                    <input type="radio" name="rentalOption" value="Self Drive" onchange="toggleRentalFields()" class="accent-amber-500">
+                                    <span class="font-bold text-slate-200">Self Drive</span>
+                                </label>
                             </div>
                         </div>
 
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-300 mb-1">Drop Location / Destination</label>
-                            <div class="relative">
-                                <i class="fa-solid fa-location-dot text-amber-500 absolute left-3.5 top-3.5 text-sm"></i>
-                                <input type="text" id="dropLoc" placeholder="e.g. Khajuraho / Satna / Local" required class="w-full bg-slate-900 border border-slate-700 rounded-xl py-2.5 pl-10 pr-3 text-sm text-white focus:outline-none focus:border-amber-500 transition">
+                        <!-- WITH DRIVER FIELDS -->
+                        <div id="withDriverFields" class="space-y-3">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block text-slate-300 font-bold mb-1">Pick-up Location</label>
+                                    <input type="text" id="pickupLoc" placeholder="e.g. Gehra, Panna / Home" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:border-amber-500 focus:outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-slate-300 font-bold mb-1">Drop Location</label>
+                                    <input type="text" id="dropLoc" placeholder="e.g. Khajuraho / Satna / Airport" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:border-amber-500 focus:outline-none">
+                                </div>
                             </div>
                         </div>
 
+                        <!-- SELF DRIVE FIELDS -->
+                        <div id="selfDriveFields" class="space-y-3 hidden">
+                            <div>
+                                <label class="block text-slate-300 font-bold mb-1.5">Select Rental Duration</label>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <label class="flex items-center justify-center gap-2 p-2 bg-slate-950 border border-slate-800 rounded-xl cursor-pointer hover:border-amber-500/50 transition">
+                                        <input type="radio" name="selfDriveDuration" value="12 Hours" checked class="accent-amber-500">
+                                        <span class="font-bold text-slate-200">12 Hours</span>
+                                    </label>
+                                    <label class="flex items-center justify-center gap-2 p-2 bg-slate-950 border border-slate-800 rounded-xl cursor-pointer hover:border-amber-500/50 transition">
+                                        <input type="radio" name="selfDriveDuration" value="24 Hours" class="accent-amber-500">
+                                        <span class="font-bold text-slate-200">24 Hours</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-slate-300 font-bold mb-1">Where are you heading?</label>
+                                <input type="text" id="selfDriveHeading" placeholder="Enter Destination / Drop Location" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:border-amber-500 focus:outline-none">
+                            </div>
+                        </div>
+
+                        <!-- COMMON FIELDS -->
                         <div class="grid grid-cols-2 gap-3">
                             <div>
-                                <label class="block text-xs font-semibold text-slate-300 mb-1">Travel Date</label>
-                                <input type="date" id="travelDate" required class="w-full bg-slate-900 border border-slate-700 rounded-xl py-2.5 px-3 text-sm text-white focus:outline-none focus:border-amber-500 transition">
+                                <label for="travelDate" class="block text-slate-300 font-bold mb-1">Travel Date</label>
+                                <input type="date" id="travelDate" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:border-amber-500 focus:outline-none">
                             </div>
                             <div>
-                                <label class="block text-xs font-semibold text-slate-300 mb-1">Select Car</label>
-                                <select id="carSelect" class="w-full bg-slate-900 border border-slate-700 rounded-xl py-2.5 px-3 text-sm text-white focus:outline-none focus:border-amber-500 transition">
-                                    <option value="Kia Carens (White)">Kia Carens (White)</option>
-                                    <option value="Innova Crysta">Innova Crysta</option>
-                                    <option value="Ertiga">Maruti Ertiga</option>
-                                    <option value="Swift Dzire">Swift Dzire</option>
+                                <label for="carSelect" class="block text-slate-300 font-bold mb-1">Select Vehicle</label>
+                                <select id="carSelect" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:border-amber-500 focus:outline-none">
+                                    <option value="Swift Dzire">Swift Dzire (Sedan)</option>
+                                    <option value="Baleno">Baleno (Hatchback)</option>
+                                    <option value="Kia Carens">Kia Carens (MPV)</option>
+                                    <option value="Innova">Innova / Innova Crysta</option>
+                                    <option value="Thar">Mahindra Thar (4x4 SUV)</option>
+                                    <option value="Scorpio">Mahindra Scorpio (SUV)</option>
                                 </select>
                             </div>
                         </div>
 
-                        <button type="submit" class="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-extrabold py-3.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-base">
-                            <i class="fa-brands fa-whatsapp text-2xl"></i> Book via WhatsApp
-                        </button>
+                        <!-- TERMS & CONDITIONS CHECKBOX (SELF DRIVE ONLY) -->
+                        <div id="tncContainer" class="hidden items-center gap-2 pt-1">
+                            <input type="checkbox" id="agreeTnC" class="accent-amber-500 rounded cursor-pointer">
+                            <label for="agreeTnC" class="text-slate-300 text-[11px]">
+                                I agree to the <a onclick="openTermsModal()" class="text-amber-400 underline cursor-pointer hover:text-amber-300">Terms & Conditions</a>
+                            </label>
+                        </div>
 
-                        <p class="text-[11px] text-center text-slate-400">
-                            Direct connection with Raj Laxmi Travels team on WhatsApp.
-                        </p>
+                        <button type="submit" id="submitBtn" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-extrabold py-3.5 rounded-xl shadow-lg shadow-amber-500/20 transition flex items-center justify-center gap-2 text-sm mt-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Check Availability & Book
+                        </button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Self-Drive Requirements Highlights Banner -->
+    <section class="bg-slate-900/60 border-b border-slate-800 py-6">
+        <div class="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-300">
+            <div class="font-extrabold text-amber-400 flex items-center gap-2 text-sm">
+                <i class="fa-solid fa-key text-amber-500"></i> Self-Drive Requirements:
+            </div>
+            <div class="flex items-center gap-2 bg-slate-950 px-3 py-1.5 rounded-lg border border-slate-800">
+                <i class="fa-solid fa-id-card text-amber-500"></i> Valid Driving License
+            </div>
+            <div class="flex items-center gap-2 bg-slate-950 px-3 py-1.5 rounded-lg border border-slate-800">
+                <i class="fa-solid fa-address-card text-amber-500"></i> Govt ID Proof
+            </div>
+            <div class="flex items-center gap-2 bg-slate-950 px-3 py-1.5 rounded-lg border border-slate-800">
+                <i class="fa-solid fa-shield-cat text-amber-500"></i> Minimum Security Deposit
+            </div>
+            <a onclick="openTermsModal()" class="text-amber-400 font-bold hover:underline cursor-pointer flex items-center gap-1">
+                View Details <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
     <!-- Services Section -->
-    <section id="services" class="py-20 bg-slate-900 border-t border-b border-slate-800">
+    <section id="services" class="py-20 bg-slate-900 border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-amber-500 font-bold text-xs uppercase tracking-widest">Our Expertise</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-1">Services We Offer</h2>
-                <p class="text-slate-400 text-sm mt-2">Tailored travel solutions designed for ultimate safety, comfort, and peace of mind.</p>
+                <span class="text-amber-500 font-bold text-xs uppercase tracking-widest">Our Offerings</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-1">Car Rental Services</h2>
+                <p class="text-slate-400 text-sm mt-2">Tailored travel solutions for local errands, family tours, and outstation rides.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-6">
-                <!-- Service 1 -->
-                <div class="bg-slate-950 border border-slate-800 p-6 rounded-2xl hover:border-amber-500/50 transition group">
-                    <div class="w-14 h-14 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-slate-950 transition">
-                        <i class="fa-solid fa-key"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Self Drive Cars</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                        Drive at your own pace with total privacy. Take our clean, well-maintained vehicles for family trips or private drives.
-                    </p>
-                    <a href="#heroBookingForm" class="text-amber-500 text-xs font-bold hover:underline flex items-center gap-1">Inquire Self Drive &rarr;</a>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="bg-slate-950 border border-slate-800 p-6 rounded-2xl hover:border-amber-500/50 transition group">
-                    <div class="w-14 h-14 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-slate-950 transition">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition group space-y-3">
+                    <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl group-hover:bg-amber-500 group-hover:text-slate-950 transition">
                         <i class="fa-solid fa-user-tie"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Chauffeur Driven Cars</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                        Sit back, relax, and enjoy your journey with our polite, experienced, and background-verified professional drivers.
+                    <h3 class="text-lg font-bold text-white">Chauffeur Driven Cars</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Sit back and relax while our experienced, courteous local drivers guide you through your journey.
                     </p>
-                    <a href="#heroBookingForm" class="text-amber-500 text-xs font-bold hover:underline flex items-center gap-1">Inquire Chauffeur &rarr;</a>
                 </div>
 
-                <!-- Service 3 -->
-                <div class="bg-slate-950 border border-slate-800 p-6 rounded-2xl hover:border-amber-500/50 transition group">
-                    <div class="w-14 h-14 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-slate-950 transition">
+                <div class="bg-slate-950 p-6 rounded-2xl border border-amber-500/30 hover:border-amber-500 transition group space-y-4 relative flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl group-hover:bg-amber-500 group-hover:text-slate-950 transition">
+                                <i class="fa-solid fa-key"></i>
+                            </div>
+                            <span class="text-[10px] bg-amber-500/20 text-amber-400 px-2.5 py-1 rounded-full font-bold uppercase">Popular</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Self Drive Cars</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Enjoy complete privacy and freedom to drive at your own pace with our well-maintained fleet. Collect from our garage location.
+                        </p>
+                    </div>
+                    <button onclick="openTermsModal()" class="w-full mt-2 bg-slate-900 hover:bg-slate-800 text-amber-400 border border-amber-500/30 text-xs font-bold py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-file-contract"></i> View Terms & Conditions
+                    </button>
+                </div>
+
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition group space-y-3">
+                    <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl group-hover:bg-amber-500 group-hover:text-slate-950 transition">
                         <i class="fa-solid fa-plane-departure"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Airport Transfers</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                        Punctual pickup & drop services for Khajuraho Airport, Jabalpur, Gwalior, or Bhopal Airports with guaranteed timeliness.
+                    <h3 class="text-lg font-bold text-white">Airport Transfers</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Punctual pickups and drops for Khajuraho, Jabalpur, and Gwalior airports without delay.
                     </p>
-                    <a href="#heroBookingForm" class="text-amber-500 text-xs font-bold hover:underline flex items-center gap-1">Book Airport Pickup &rarr;</a>
                 </div>
 
-                <!-- Service 4 -->
-                <div class="bg-slate-950 border border-slate-800 p-6 rounded-2xl hover:border-amber-500/50 transition group">
-                    <div class="w-14 h-14 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-slate-950 transition">
-                        <i class="fa-solid fa-city"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Local Rental</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                        Affordable hourly/daily local packages for Panna city rides, shopping, business meetings, or Panna National Park safari drop.
-                    </p>
-                    <a href="#heroBookingForm" class="text-amber-500 text-xs font-bold hover:underline flex items-center gap-1">Local Packages &rarr;</a>
-                </div>
-
-                <!-- Service 5 -->
-                <div class="bg-slate-950 border border-slate-800 p-6 rounded-2xl hover:border-amber-500/50 transition group sm:col-span-2 md:col-span-2">
-                    <div class="w-14 h-14 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-slate-950 transition">
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition group space-y-3">
+                    <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl group-hover:bg-amber-500 group-hover:text-slate-950 transition">
                         <i class="fa-solid fa-route"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Outstation Trips</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                        Planning a long-distance round trip or one-way drop to Satna, Rewa, Katni, Sagar, Indore, or Delhi? We offer seamless highway rides.
+                    <h3 class="text-lg font-bold text-white">Outstation Trips</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Reliable long-distance rides to Rewa, Satna, Chitrakoot, Maihar, and beyond at affordable rates.
                     </p>
-                    <a href="#heroBookingForm" class="text-amber-500 text-xs font-bold hover:underline flex items-center gap-1">Plan Outstation Trip &rarr;</a>
+                </div>
+
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition group space-y-3">
+                    <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl group-hover:bg-amber-500 group-hover:text-slate-950 transition">
+                        <i class="fa-solid fa-tree"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Panna Safari Tours</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Dedicated tourist taxi service for Panna Tiger Reserve, Pandav Falls, and local temples.
+                    </p>
+                </div>
+
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition group space-y-3">
+                    <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl group-hover:bg-amber-500 group-hover:text-slate-950 transition">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Wedding & Events</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Decorated luxury vehicles for weddings, VIP guest movements, and special occasions.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Fleet Section -->
+    <!-- Our Fleet & Self Drive Pricing Section -->
     <section id="fleet" class="py-20 bg-slate-950">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-amber-500 font-bold text-xs uppercase tracking-widest">Our Fleet</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-1">Explore Our Vehicles</h2>
-                <p class="text-slate-400 text-sm mt-2">Well-maintained, spacious, and luxury vehicles tailored to your journey.</p>
+        <div class="max-w-7xl mx-auto px-4 space-y-16">
+            
+            <div class="text-center max-w-2xl mx-auto">
+                <span class="text-amber-500 font-bold text-xs uppercase tracking-widest">Our Fleet & Pricing</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-1">Self Drive Rental Plans</h2>
+                <p class="text-slate-400 text-sm mt-2">Transparent pricing with fixed KM limits. Standard extra charges apply beyond limit.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Vehicle 1: Kia Carens (White) -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-amber-500/60 transition group flex flex-col justify-between">
-                    <div>
-                        <div class="relative h-48 bg-slate-950 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=800&q=80" 
-                                 alt="Kia Carens White" 
-                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500" 
-                                 onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%230f172a\'/%3E%3Cpath d=\'M500 280 L300 280\' stroke=\'%23f59e0b\' stroke-width=\'4\'/%3E%3Ctext x=\'50%25\' y=\'45%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23f59e0b\' font-size=\'32\' font-family=\'sans-serif\' font-weight=\'bold\'%3E🚘 Kia Carens%3C/text%3E%3Ctext x=\'50%25\' y=\'62%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%2394a3b8\' font-size=\'18\' font-family=\'sans-serif\'%3EWhite Premium Edition%3C/text%3E%3C/svg%3E';">
-                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-md">Featured MPV</span>
-                            <span class="absolute bottom-3 right-3 bg-slate-950/80 text-white text-xs px-2 py-0.5 rounded border border-slate-700">White Edition</span>
-                        </div>
-                        <div class="p-5 space-y-3">
-                            <h3 class="text-xl font-bold text-white">Kia Carens (White)</h3>
-                            <p class="text-xs text-slate-400">Ultra-modern 6/7 seater luxury family car with premium interior comfort.</p>
-                            
-                            <div class="grid grid-cols-2 gap-2 text-xs text-slate-300 pt-2 border-t border-slate-800">
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-users text-amber-500"></i> 6/7 Seater</span>
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-snowflake text-amber-500"></i> Rear AC Vents</span>
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-key text-amber-500"></i> Self / Chauffeur</span>
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-suitcase text-amber-500"></i> Large Boot</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-5 pt-0">
-                        <button onclick="quickBookCar('Kia Carens (White)')" class="w-full bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-slate-200 font-bold py-2.5 rounded-xl border border-slate-700 hover:border-amber-500 transition text-sm flex items-center justify-center gap-2">
-                            <i class="fa-brands fa-whatsapp"></i> Book Kia Carens
-                        </button>
-                    </div>
+            <!-- Self Drive Price Table -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl">
+                <div class="p-4 bg-slate-950 border-b border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-3">
+                    <h3 class="font-extrabold text-white flex items-center gap-2 text-base">
+                        <i class="fa-solid fa-table text-amber-500"></i> Self Drive Tariff Chart
+                    </h3>
+                    <button onclick="openTermsModal()" class="text-amber-400 text-xs font-bold hover:underline flex items-center gap-1">
+                        <i class="fa-solid fa-circle-info"></i> Read Rental Terms & Conditions
+                    </button>
                 </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs text-slate-300">
+                        <thead class="bg-slate-950/80 text-amber-400 uppercase font-extrabold border-b border-slate-800">
+                            <tr>
+                                <th class="py-4 px-4 sm:px-6">Vehicle</th>
+                                <th class="py-4 px-4 sm:px-6">12 Hours Rate</th>
+                                <th class="py-4 px-4 sm:px-6">24 Hours Rate</th>
+                                <th class="py-4 px-4 sm:px-6">Extra KM Charge</th>
+                                <th class="py-4 px-4 sm:px-6 text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800 font-medium">
+                            <tr class="hover:bg-slate-800/40 transition">
+                                <td class="py-4 px-4 sm:px-6 font-bold text-white flex items-center gap-2">
+                                    <i class="fa-solid fa-car text-amber-500"></i> Swift Dzire
+                                </td>
+                                <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹1,500 <span class="text-[10px] text-slate-400 block font-normal">(200 KM Limit)</span></td>
+                                <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹2,500 <span class="text-[10px] text-slate-400 block font-normal">(400 KM Limit)</span></td>
+                                <td class="py-4 px-4 sm:px-6">₹12 / km</td>
+                                <td class="py-4 px-4 sm:px-6 text-center">
+                                    <button onclick="quickBookCar('Swift Dzire')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-3 py-1.5 rounded-lg transition">Book</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/40 transition">
+                                <td class="py-4 px-4 sm:px-6 font-bold text-white flex items-center gap-2">
+                                    <i class="fa-solid fa-car text-amber-500"></i> Baleno
+                                </td>
+                                <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹1,500 <span class="text-[10px] text-slate-400 block font-normal">(200 KM Limit)</span></td>
+                                <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹2,500 <span class="text-[10px] text-slate-400 block font-normal">(400 KM Limit)</span></td>
+                                <td class="py-4 px-4 sm:px-6">₹12 / km</td>
+                                <td class="py-4 px-4 sm:px-6 text-center">
+                                    <button onclick="quickBookCar('Baleno')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-3 py-1.5 rounded-lg transition">Book</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/40 transition">
+                                <td class="py-4 px-4 sm:px-6 font-bold text-white flex items-center gap-2">
+                                    <i class="fa-solid fa-car-side text-amber-500"></i> Kia Carens
+                                </td>
+                                <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹2,000 <span class="text-[10px] text-slate-400 block font-normal">(180 KM Limit)</span></td>
+                                <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹3,500 <span class="text-[10px] text-slate-400 block font-normal">(360 KM Limit)</span></td>
+                                <td class="py-4 px-4 sm:px-6">₹12 / km</td>
+                                <td class="py-4 px-4 sm:px-6 text-center">
+                                    <button onclick="quickBookCar('Kia Carens')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-3 py-1.5 rounded-lg transition">Book</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/40 transition">
+                                <td class="py-4 px-4 sm:px-6 font-bold text-white flex items-center gap-2">
+                                    <i class="fa-solid fa-car-side text-amber-500"></i> Innova
+                                </td>
+                                <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹3,000 <span class="text-[10px] text-slate-400 block font-normal">(150 KM Limit)</span></td>
+                                <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹5,500 <span class="text-[10px] text-slate-400 block font-normal">(300 KM Limit)</span></td>
+                                <td class="py-4 px-4 sm:px-6">₹12 / km</td>
+                                <td class="py-4 px-4 sm:px-6 text-center">
+                                    <button onclick="quickBookCar('Innova')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-3 py-1.5 rounded-lg transition">Book</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/40 transition">
+                                <td class="py-4 px-4 sm:px-6 font-bold text-white flex items-center gap-2">
+                                    <i class="fa-solid fa-truck-monster text-amber-500"></i> Mahindra Thar
+                                </td>
+                                <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹3,000 <span class="text-[10px] text-slate-400 block font-normal">(150 KM Limit)</span></td>
+                                <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹5,500 <span class="text-[10px] text-slate-400 block font-normal">(300 KM Limit)</span></td>
+                                <td class="py-4 px-4 sm:px-6">₹12 / km</td>
+                                <td class="py-4 px-4 sm:px-6 text-center">
+                                    <button onclick="quickBookCar('Mahindra Thar')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-3 py-1.5 rounded-lg transition">Book</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/40 transition">
+                                <td class="py-4 px-4 sm:px-6 font-bold text-white flex items-center gap-2">
+                                    <i class="fa-solid fa-truck-pickup text-amber-500"></i> Mahindra Scorpio
+                                </td>
+                                <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹3,000 <span class="text-[10px] text-slate-400 block font-normal">(150 KM Limit)</span></td>
+                                <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹5,500 <span class="text-[10px] text-slate-400 block font-normal">(300 KM Limit)</span></td>
+                                <td class="py-4 px-4 sm:px-6">₹12 / km</td>
+                                <td class="py-4 px-4 sm:px-6 text-center">
+                                    <button onclick="quickBookCar('Mahindra Scorpio')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-3 py-1.5 rounded-lg transition">Book</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
-                <!-- Vehicle 2: Innova Crysta -->
+            <!-- Vehicle Cards Display (Prices removed from cards) -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Vehicle 1: Dzire -->
                 <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-amber-500/60 transition group flex flex-col justify-between">
                     <div>
                         <div class="relative h-48 bg-slate-950 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80" 
-                                 alt="Innova Crysta" 
-                                 class="w-full h-48 object-cover group-hover:scale-105 transition duration-500" 
-                                 onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%230f172a\'/%3E%3Ctext x=\'50%25\' y=\'45%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23f59e0b\' font-size=\'32\' font-family=\'sans-serif\' font-weight=\'bold\'%3E🚐 Innova Crysta%3C/text%3E%3Ctext x=\'50%25\' y=\'62%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%2394a3b8\' font-size=\'18\' font-family=\'sans-serif\'%3ELuxury King of Comfort%3C/text%3E%3C/svg%3E';">
-                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-md">King of Comfort</span>
-                        </div>
-                        <div class="p-5 space-y-3">
-                            <h3 class="text-xl font-bold text-white">Innova Crysta</h3>
-                            <p class="text-xs text-slate-400">The ultimate luxury ride for outstation long trips, family tours, and events.</p>
-                            
-                            <div class="grid grid-cols-2 gap-2 text-xs text-slate-300 pt-2 border-t border-slate-800">
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-users text-amber-500"></i> 7 Seater</span>
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-snowflake text-amber-500"></i> Dual Climate AC</span>
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-couch text-amber-500"></i> Captain Seats</span>
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-shield text-amber-500"></i> Smooth Highway</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-5 pt-0">
-                        <button onclick="quickBookCar('Innova Crysta')" class="w-full bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-slate-200 font-bold py-2.5 rounded-xl border border-slate-700 hover:border-amber-500 transition text-sm flex items-center justify-center gap-2">
-                            <i class="fa-brands fa-whatsapp"></i> Book Innova Crysta
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Vehicle 3: Maruti Ertiga -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-amber-500/60 transition group flex flex-col justify-between">
-                    <div>
-                        <div class="relative h-48 bg-slate-950 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80" 
-                                 alt="Maruti Ertiga" 
-                                 class="w-full h-48 object-cover group-hover:scale-105 transition duration-500" 
-                                 onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%230f172a\'/%3E%3Ctext x=\'50%25\' y=\'45%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23f59e0b\' font-size=\'32\' font-family=\'sans-serif\' font-weight=\'bold\'%3E🚘 Maruti Ertiga%3C/text%3E%3Ctext x=\'50%25\' y=\'62%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%2394a3b8\' font-size=\'18\' font-family=\'sans-serif\'%3EBest Budget 7-Seater%3C/text%3E%3C/svg%3E';">
-                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-md">Best Budget SUV</span>
-                        </div>
-                        <div class="p-5 space-y-3">
-                            <h3 class="text-xl font-bold text-white">Maruti Ertiga</h3>
-                            <p class="text-xs text-slate-400">Economical & spacious 6-seater for comfortable city & outstation travel.</p>
-                            
-                            <div class="grid grid-cols-2 gap-2 text-xs text-slate-300 pt-2 border-t border-slate-800">
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-users text-amber-500"></i> 6/7 Seater</span>
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-snowflake text-amber-500"></i> Powerful AC</span>
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-gas-pump text-amber-500"></i> Highly Mileage</span>
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-tag text-amber-500"></i> Affordable</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-5 pt-0">
-                        <button onclick="quickBookCar('Maruti Ertiga')" class="w-full bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-slate-200 font-bold py-2.5 rounded-xl border border-slate-700 hover:border-amber-500 transition text-sm flex items-center justify-center gap-2">
-                            <i class="fa-brands fa-whatsapp"></i> Book Ertiga
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Vehicle 4: Swift Dzire -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-amber-500/60 transition group flex flex-col justify-between">
-                    <div>
-                        <div class="relative h-48 bg-slate-950 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=800&q=80"
                                  alt="Swift Dzire" 
-                                 class="w-full h-48 object-cover group-hover:scale-105 transition duration-500" 
-                                 onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'500\' viewBox=\'0 0 800 500\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%230f172a\'/%3E%3Ctext x=\'50%25\' y=\'45%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23f59e0b\' font-size=\'32\' font-family=\'sans-serif\' font-weight=\'bold\'%3E🚗 Swift Dzire%3C/text%3E%3Ctext x=\'50%25\' y=\'62%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%2394a3b8\' font-size=\'18\' font-family=\'sans-serif\'%3ECompact Luxury Sedan%3C/text%3E%3C/svg%3E';">
-                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-md">Compact Sedan</span>
+                                 class="w-full h-48 object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-md">Sedan</span>
                         </div>
-                        <div class="p-5 space-y-3">
+                        <div class="p-5 space-y-2">
                             <h3 class="text-xl font-bold text-white">Swift Dzire</h3>
-                            <p class="text-xs text-slate-400">Best sedan for small families, fast local commutes, and airport pickups.</p>
-                            
-                            <div class="grid grid-cols-2 gap-2 text-xs text-slate-300 pt-2 border-t border-slate-800">
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-users text-amber-500"></i> 4 Seater</span>
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-snowflake text-amber-500"></i> Chilled AC</span>
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-suitcase text-amber-500"></i> 2 Luggage Bags</span>
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-car-side text-amber-500"></i> Smooth Ride</span>
-                            </div>
+                            <p class="text-xs text-slate-400">Comfortable 5-seater sedan with high mileage, chilled AC & smooth drive.</p>
                         </div>
                     </div>
                     <div class="p-5 pt-0">
@@ -466,9 +469,104 @@
                         </button>
                     </div>
                 </div>
+
+                <!-- Vehicle 2: Kia Carens -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-amber-500/60 transition group flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 bg-slate-950 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Kia Carens" 
+                                 class="w-full h-48 object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-md">Luxury MPV</span>
+                        </div>
+                        <div class="p-5 space-y-2">
+                            <h3 class="text-xl font-bold text-white">Kia Carens</h3>
+                            <p class="text-xs text-slate-400">Spacious 6/7 seater vehicle with premium seating and excellent comfort for families.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <button onclick="quickBookCar('Kia Carens')" class="w-full bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-slate-200 font-bold py-2.5 rounded-xl border border-slate-700 hover:border-amber-500 transition text-sm flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp"></i> Book Carens
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Vehicle 3: Innova -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-amber-500/60 transition group flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 bg-slate-950 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Innova" 
+                                 class="w-full h-48 object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-md">King of Highways</span>
+                        </div>
+                        <div class="p-5 space-y-2">
+                            <h3 class="text-xl font-bold text-white">Innova / Crysta</h3>
+                            <p class="text-xs text-slate-400">Powerful 7-seater SUV with top safety features and long route reliability.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <button onclick="quickBookCar('Innova')" class="w-full bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-slate-200 font-bold py-2.5 rounded-xl border border-slate-700 hover:border-amber-500 transition text-sm flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp"></i> Book Innova
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Terms & Conditions Modal -->
+    <div id="termsModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-6 shadow-2xl relative my-8">
+            <button onclick="closeTermsModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div class="border-b border-slate-800 pb-4">
+                <div class="inline-flex items-center gap-2 text-amber-500 font-bold text-xs uppercase mb-1">
+                    <i class="fa-solid fa-shield-halved"></i> Rental Policy
+                </div>
+                <h3 class="text-2xl font-black text-white">Self Drive Terms & Conditions</h3>
+                <p class="text-xs text-slate-400 mt-1">Please read these rules carefully before taking the vehicle delivery.</p>
+            </div>
+
+            <div class="space-y-4 text-xs text-slate-300 max-h-[60vh] overflow-y-auto pr-2">
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
+                    <h4 class="text-amber-400 font-bold text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-circle-check"></i> General Terms
+                    </h4>
+                    <ul class="list-disc list-inside space-y-1.5 text-slate-300">
+                        <li>The car is provided on a <strong>self-drive basis</strong>. No driver will be provided.</li>
+                        <li>The renter must carry a <strong>valid Driving License</strong> and a <strong>Government ID Proof</strong>.</li>
+                        <li>The renter is fully responsible for the vehicle during the rental period.</li>
+                        <li>Any damage, accident, traffic challan, or loss will be borne by the renter.</li>
+                        <li><strong>Smoking, alcohol consumption, and driving under the influence</strong> are strictly prohibited.</li>
+                        <li>The vehicle must be returned on time and in the same condition.</li>
+                        <li>Late return charges will be applicable as per hourly standard rates.</li>
+                        <li><strong>Fuel Policy:</strong> Return the vehicle with the same fuel level as provided at delivery.</li>
+                        <li>Security Deposit will be refunded after full vehicle inspection upon return.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
+                    <h4 class="text-amber-400 font-bold text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-id-card"></i> Required Documents
+                    </h4>
+                    <ul class="list-disc list-inside space-y-1.5 text-slate-300">
+                        <li>Original & Valid Driving License (DL)</li>
+                        <li>Government Photo ID Proof</li>
+                        <li>Address Proof</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-2 border-t border-slate-800 flex justify-end">
+                <button onclick="closeTermsModal()" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-6 py-2.5 rounded-xl text-xs transition">
+                    I Understand & Agree
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Why Choose Us Section -->
     <section id="why-us" class="py-20 bg-slate-900 border-t border-b border-slate-800">
@@ -506,7 +604,7 @@
                     </div>
                     <h3 class="text-lg font-bold text-white">Affordable Prices</h3>
                     <p class="text-xs text-slate-400 leading-relaxed">
-                        Transparent per-km and daily rates without hidden fees. Get the best value for your hard-earned money.
+                        Transparent per-km and daily rates without hidden fees. Get the best value for your money.
                     </p>
                 </div>
 
@@ -516,7 +614,7 @@
                     </div>
                     <h3 class="text-lg font-bold text-white">Instant Booking</h3>
                     <p class="text-xs text-slate-400 leading-relaxed">
-                        Zero hassle! Pick your car, share trip details on WhatsApp, and confirm your car reservation in minutes.
+                        Zero hassle! Pick your car, share trip details on WhatsApp, and confirm your reservation in minutes.
                     </p>
                 </div>
             </div>
@@ -570,7 +668,7 @@
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
                     <p class="text-slate-300 text-sm italic">
-                        "Booked Innova Crysta with driver for airport drop. Driver was on time, super polite and drove very safely. Highly recommended Raj Laxmi Travels!"
+                        "Booked Innova with driver for airport drop. Driver was on time, super polite and drove very safely. Highly recommended Raj Laxmi Travels!"
                     </p>
                     <div class="flex items-center gap-3 pt-2 border-t border-slate-800">
                         <div class="w-10 h-10 bg-amber-500 text-slate-950 rounded-full flex items-center justify-center font-bold">RP</div>
@@ -611,18 +709,14 @@
                             </div>
                         </div>
 
-                        <!-- Phones -->
+                        <!-- Phone -->
                         <div class="flex items-start gap-4 p-4 bg-slate-950 rounded-2xl border border-slate-800">
                             <div class="w-10 h-10 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-xl shrink-0">
                                 <i class="fa-solid fa-phone"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-white">Calling Numbers</h4>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 mt-1 font-semibold text-amber-400">
-                                    <a href="tel:9303418620" class="hover:underline">+91 93034 18620</a>
-                                    <span class="text-slate-600">|</span>
-                                    <a href="tel:7999647528" class="hover:underline">+91 79996 47528</a>
-                                </div>
+                                <h4 class="font-bold text-white">Call Booking Desk</h4>
+                                <a href="tel:9303418620" class="text-amber-400 font-bold hover:underline block mt-0.5">+91 93034 18620</a>
                             </div>
                         </div>
 
@@ -671,7 +765,6 @@
 
     <!-- Sticky Floating Call & WhatsApp Buttons -->
     <div class="fixed bottom-5 right-5 z-50 flex flex-col gap-3">
-        <!-- Direct WhatsApp Floating Button -->
         <a href="https://wa.me/919303418620?text=Hello%20Raj%20Laxmi%20Travels,%20I%20want%20to%20inquire%20about%20car%20rental." 
            target="_blank" 
            class="w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center text-3xl shadow-2xl transition-transform hover:scale-110 pulse-glow"
@@ -679,7 +772,6 @@
             <i class="fa-brands fa-whatsapp"></i>
         </a>
 
-        <!-- Direct Phone Call Floating Button -->
         <a href="tel:9303418620" 
            class="w-14 h-14 bg-amber-500 hover:bg-amber-600 text-slate-950 rounded-full flex items-center justify-center text-2xl shadow-2xl transition-transform hover:scale-110"
            aria-label="Call Now">
@@ -698,7 +790,7 @@
                     <span class="text-lg font-bold text-white">Raj Laxmi Travels</span>
                 </div>
                 <p class="text-xs text-slate-400 leading-relaxed">
-                    Premium Self Drive & Chauffeur Cabs in Panna, MP. Safe, clean cars & 24/7 service.
+                    Premium Chauffeur & Self Drive Cabs in Panna, MP. Safe, clean cars & 24/7 service.
                 </p>
             </div>
 
@@ -707,25 +799,24 @@
                 <ul class="space-y-2 text-xs">
                     <li><a href="#home" class="hover:text-amber-500">Home</a></li>
                     <li><a href="#services" class="hover:text-amber-500">Services</a></li>
-                    <li><a href="#fleet" class="hover:text-amber-500">Our Fleet</a></li>
-                    <li><a href="#why-us" class="hover:text-amber-500">Why Choose Us</a></li>
+                    <li><a href="#fleet" class="hover:text-amber-500">Fleet & Pricing</a></li>
+                    <li><a onclick="openTermsModal()" class="hover:text-amber-500 cursor-pointer">Self Drive T&C</a></li>
                 </ul>
             </div>
 
             <div>
                 <h4 class="text-white font-bold text-sm mb-3">Our Vehicles</h4>
                 <ul class="space-y-2 text-xs">
-                    <li><a href="#fleet" class="hover:text-amber-500">Kia Carens (White)</a></li>
-                    <li><a href="#fleet" class="hover:text-amber-500">Innova Crysta</a></li>
-                    <li><a href="#fleet" class="hover:text-amber-500">Maruti Ertiga</a></li>
                     <li><a href="#fleet" class="hover:text-amber-500">Swift Dzire</a></li>
+                    <li><a href="#fleet" class="hover:text-amber-500">Baleno</a></li>
+                    <li><a href="#fleet" class="hover:text-amber-500">Kia Carens</a></li>
+                    <li><a href="#fleet" class="hover:text-amber-500">Innova / Thar / Scorpio</a></li>
                 </ul>
             </div>
 
             <div>
                 <h4 class="text-white font-bold text-sm mb-3">Contact Support</h4>
                 <p class="text-xs text-slate-300">Call: +91 93034 18620</p>
-                <p class="text-xs text-slate-300 mt-1">Call: +91 79996 47528</p>
                 <p class="text-xs text-slate-400 mt-2">Near Shanvi Landmark, Gehra, Panna (M.P.)</p>
             </div>
         </div>
@@ -737,8 +828,6 @@
                 <span class="block sm:inline mt-1 sm:mt-0 text-slate-400">
                     Designed & Developed by 
                     <a href="https://www.linkedin.com/in/muskan-t-532394351" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold underline underline-offset-2 transition"><i class="fa-brands fa-linkedin text-amber-500 mr-1"></i>Muskan Tripathi</a>
-                    <span class="mx-1">•</span>
-                    <a href="mailto:workwithmuskan7@gmail.com" class="text-amber-400 hover:text-amber-300 font-medium transition inline-flex items-center gap-1"><i class="fa-solid fa-envelope text-amber-500"></i>workwithmuskan7@gmail.com</a>
                 </span>
             </div>
             <div class="flex gap-4 text-base">
@@ -759,7 +848,7 @@
             "display": "standalone",
             "background_color": "#0f172a",
             "theme_color": "#0f172a",
-            "description": "Book Self Drive & Chauffeur Cabs in Panna",
+            "description": "Book Chauffeur & Self Drive Cabs in Panna",
             "icons": [
                 {
                     "src": "https://cdn-icons-png.flaticon.com/512/3202/3202021.png",
@@ -778,12 +867,57 @@
         const manifestUrl = URL.createObjectURL(blobManifest);
         document.getElementById('manifestPlaceholder').setAttribute('href', manifestUrl);
 
-        // Set default date to today
         document.addEventListener('DOMContentLoaded', () => {
             const today = new Date().toISOString().split('T')[0];
             const dateInput = document.getElementById('travelDate');
             if(dateInput) dateInput.value = today;
+            toggleRentalFields();
         });
+
+        // Toggle Dynamic Dynamic Form Inputs between With Driver and Self Drive
+        function toggleRentalFields() {
+            const selectedOption = document.querySelector('input[name="rentalOption"]:checked').value;
+            const withDriverDiv = document.getElementById('withDriverFields');
+            const selfDriveDiv = document.getElementById('selfDriveFields');
+            const tncContainer = document.getElementById('tncContainer');
+            const submitBtn = document.getElementById('submitBtn');
+
+            const pickupLoc = document.getElementById('pickupLoc');
+            const dropLoc = document.getElementById('dropLoc');
+            const selfDriveHeading = document.getElementById('selfDriveHeading');
+
+            if (selectedOption === "Self Drive") {
+                withDriverDiv.classList.add('hidden');
+                selfDriveDiv.classList.remove('hidden');
+                tncContainer.classList.remove('hidden');
+                tncContainer.classList.add('flex');
+                
+                pickupLoc.removeAttribute('required');
+                dropLoc.removeAttribute('required');
+                selfDriveHeading.setAttribute('required', 'true');
+
+                submitBtn.innerHTML = `<i class="fa-brands fa-whatsapp text-lg"></i> Proceed / Book Now`;
+            } else {
+                selfDriveDiv.classList.add('hidden');
+                withDriverDiv.classList.remove('hidden');
+                tncContainer.classList.add('hidden');
+                tncContainer.classList.remove('flex');
+
+                pickupLoc.setAttribute('required', 'true');
+                dropLoc.setAttribute('required', 'true');
+                selfDriveHeading.removeAttribute('required');
+
+                submitBtn.innerHTML = `<i class="fa-brands fa-whatsapp text-lg"></i> Check Availability & Book`;
+            }
+        }
+
+        // Terms & Conditions Modal Controls
+        function openTermsModal() {
+            document.getElementById('termsModal').classList.remove('hidden');
+        }
+        function closeTermsModal() {
+            document.getElementById('termsModal').classList.add('hidden');
+        }
 
         // Mobile Menu Toggle Function
         function toggleMobileMenu() {
@@ -801,19 +935,33 @@
             }
         }
 
-        // Hero Booking Handler
+        // Hero Booking Form Handler
         function handleHeroBooking(event) {
             event.preventDefault();
 
             const rentalType = document.querySelector('input[name="rentalOption"]:checked').value;
-            const pickup = document.getElementById('pickupLoc').value;
-            const drop = document.getElementById('dropLoc').value;
             const date = document.getElementById('travelDate').value;
             const car = document.getElementById('carSelect').value;
 
             const targetPhone = "919303418620";
 
-            const message = `Hello Raj Laxmi Travels! 👋%0A%0AMujhe car booking ki enquiry karni hai:%0A%0A🚗 *Service Type:* ${rentalType}%0A🚘 *Car Choice:* ${car}%0A📍 *Pick-up Location:* ${pickup}%0A🎯 *Drop Location:* ${drop}%0A📅 *Travel Date:* ${date}%0A%0APlease rate aur car availability confirm karein!`;
+            let message = "";
+            if (rentalType === "Self Drive") {
+                const agreeTnC = document.getElementById('agreeTnC').checked;
+                if(!agreeTnC) {
+                    alert("Please agree to the Terms & Conditions before proceeding.");
+                    return;
+                }
+                const duration = document.querySelector('input[name="selfDriveDuration"]:checked').value;
+                const destination = document.getElementById('selfDriveHeading').value;
+
+                message = `Hello Raj Laxmi Travels! 👋%0A%0AMujhe Self Drive Car booking ki enquiry karni hai:%0A%0A🚗 *Service Type:* Self Drive%0A🚘 *Car Choice:* ${car}%0A⏱️ *Rental Duration:* ${duration}%0A🗺️ *Heading / Destination:* ${destination}%0A📅 *Travel Date:* ${date}%0A✅ *T%26C Accepted:* Yes%0A%0APlease availability aur booking confirm karein!`;
+            } else {
+                const pickup = document.getElementById('pickupLoc').value;
+                const drop = document.getElementById('dropLoc').value;
+
+                message = `Hello Raj Laxmi Travels! 👋%0A%0AMujhe Car Booking (With Driver) ki enquiry karni hai:%0A%0A🚗 *Service Type:* With Driver%0A🚘 *Car Choice:* ${car}%0A📍 *Pick-up Location:* ${pickup}%0A🎯 *Drop Location:* ${drop}%0A📅 *Travel Date:* ${date}%0A%0APlease rate aur availability confirm karein!`;
+            }
 
             const whatsappUrl = `https://wa.me/${targetPhone}?text=${message}`;
             window.open(whatsappUrl, '_blank');
@@ -822,7 +970,7 @@
         // Quick Book Single Car Card
         function quickBookCar(carName) {
             const targetPhone = "919303418620";
-            const message = `Hello Raj Laxmi Travels! 👋%0A%0AMujhe *${carName}* book karni hai. Please rates aur availability details share karein.`;
+            const message = `Hello Raj Laxmi Travels! 👋%0A%0AMujhe *${carName}* (With Driver / Self Drive) book karni hai. Please availability details share karein.`;
             const whatsappUrl = `https://wa.me/${targetPhone}?text=${message}`;
             window.open(whatsappUrl, '_blank');
         }
@@ -833,7 +981,6 @@
             e.preventDefault();
             deferredPrompt = e;
             
-            // Show Install Buttons
             const navBtn = document.getElementById('pwaInstallBtnNav');
             const banner = document.getElementById('pwaBanner');
             if(navBtn) navBtn.classList.remove('hidden');
