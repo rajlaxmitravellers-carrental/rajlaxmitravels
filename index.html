@@ -22,41 +22,13 @@
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            perspective: 1000px; /* 3D Depth Perspective */
         }
         @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 0 15px rgba(34, 197, 94, 0.4), 0 0 30px rgba(245, 158, 11, 0.2); }
-            50% { box-shadow: 0 0 25px rgba(34, 197, 94, 0.8), 0 0 45px rgba(245, 158, 11, 0.5); }
+            0%, 100% { box-shadow: 0 0 15px rgba(34, 197, 94, 0.4); }
+            50% { box-shadow: 0 0 25px rgba(34, 197, 94, 0.8); }
         }
         .pulse-glow {
             animation: pulseGlow 2s infinite;
-        }
-
-        /* --- 3D CARD & TILT EFFECT STYLES --- */
-        .card-3d {
-            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
-            transform-style: preserve-3d;
-        }
-        .card-3d:hover {
-            transform: translateY(-8px) rotateX(2deg) rotateY(-2deg);
-            box-shadow: 0 20px 35px -10px rgba(245, 158, 11, 0.25), 0 10px 20px -5px rgba(0, 0, 0, 0.8);
-        }
-
-        .form-3d {
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9), 0 0 30px -10px rgba(245, 158, 11, 0.15);
-            transform: translateZ(20px);
-        }
-
-        .btn-3d {
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
-        }
-        .btn-3d:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5);
-        }
-        .btn-3d:active {
-            transform: translateY(1px);
         }
     </style>
 </head>
@@ -77,10 +49,10 @@
     </div>
 
     <!-- Navigation Bar -->
-    <header class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur-md border-b border-slate-800/80 shadow-lg">
+    <header class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur-md border-b border-slate-800/80">
         <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-            <a href="#home" class="flex items-center gap-2.5 group">
-                <div class="w-10 h-10 bg-amber-500 text-slate-950 rounded-xl flex items-center justify-center font-black text-xl shadow-lg shadow-amber-500/30 group-hover:scale-105 transition">
+            <a href="#home" class="flex items-center gap-2.5">
+                <div class="w-10 h-10 bg-amber-500 text-slate-950 rounded-xl flex items-center justify-center font-black text-xl shadow-lg shadow-amber-500/20">
                     <i class="fa-solid fa-car-side"></i>
                 </div>
                 <div>
@@ -100,10 +72,10 @@
             </nav>
 
             <div class="flex items-center gap-3">
-                <button id="pwaInstallBtnNav" onclick="installPWAApp()" class="hidden sm:flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-amber-400 border border-amber-500/30 text-xs font-bold px-3.5 py-2 rounded-xl transition btn-3d">
+                <button id="pwaInstallBtnNav" onclick="installPWAApp()" class="hidden sm:flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-amber-400 border border-amber-500/30 text-xs font-bold px-3.5 py-2 rounded-xl transition">
                     <i class="fa-solid fa-download"></i> Install App
                 </button>
-                <a href="https://wa.me/919303418620" target="_blank" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-amber-500/25 transition flex items-center gap-2 btn-3d">
+                <a href="https://wa.me/919303418620" target="_blank" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-amber-500/10 transition flex items-center gap-2">
                     <i class="fa-brands fa-whatsapp text-sm"></i> Book Now
                 </a>
                 <button onclick="toggleMobileMenu()" class="lg:hidden text-slate-300 hover:text-white p-2 text-xl" aria-label="Toggle Navigation">
@@ -129,7 +101,7 @@
     </header>
 
     <!-- App Install Banner (PWA Notification) -->
-    <div id="pwaBanner" class="hidden bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 px-4 py-2.5 text-xs font-bold flex items-center justify-between border-b border-amber-400 shadow-xl">
+    <div id="pwaBanner" class="hidden bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 px-4 py-2.5 text-xs font-bold flex items-center justify-between border-b border-amber-400 shadow-md">
         <div class="flex items-center gap-2">
             <i class="fa-solid fa-mobile-screen-button text-base"></i>
             <span>Install Raj Laxmi Travels App for faster bookings!</span>
@@ -146,52 +118,52 @@
         <div class="max-w-7xl mx-auto px-4 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
             
             <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold shadow-lg shadow-amber-500/10">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold">
                     <span class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span>
                     Premium Chauffeur & Self Drive Services in Panna
                 </div>
                 <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
-                    From City Rides to Long Drives — <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600 drop-shadow">We've Got The Perfect Car.</span>
+                    From City Rides to Long Drives — <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">We've Got The Perfect Car.</span>
                 </h1>
                 <p class="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                     Explore Panna National Park, Khajuraho, Satna & outstation routes with clean, well-maintained SUVs, MPVs, and Sedans. Available with driver or self-drive options.
                 </p>
 
                 <div class="grid sm:grid-cols-3 gap-4 pt-4 text-left">
-                    <div class="p-4 bg-slate-900/90 rounded-2xl border border-slate-800 card-3d">
+                    <div class="p-3.5 bg-slate-900/80 rounded-xl border border-slate-800">
                         <div class="text-amber-500 font-bold text-lg">100%</div>
                         <div class="text-xs text-slate-400">Sanitized Cars</div>
                     </div>
-                    <div class="p-4 bg-slate-900/90 rounded-2xl border border-slate-800 card-3d">
+                    <div class="p-3.5 bg-slate-900/80 rounded-xl border border-slate-800">
                         <div class="text-amber-500 font-bold text-lg">24/7</div>
                         <div class="text-xs text-slate-400">Roadside Assistance</div>
                     </div>
-                    <div class="p-4 bg-slate-900/90 rounded-2xl border border-slate-800 card-3d">
+                    <div class="p-3.5 bg-slate-900/80 rounded-xl border border-slate-800">
                         <div class="text-amber-500 font-bold text-lg">Best Rates</div>
                         <div class="text-xs text-slate-400">Transparent Pricing</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Quick Booking Form Card with 3D Depth -->
+            <!-- Quick Booking Form Card -->
             <div class="lg:col-span-5">
-                <div class="bg-slate-900/95 border border-slate-700/80 rounded-3xl p-6 form-3d backdrop-blur-xl relative">
+                <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-2xl backdrop-blur-xl relative">
                     <div class="flex items-center justify-between mb-4 border-b border-slate-800 pb-3">
                         <h2 class="text-lg font-extrabold text-white flex items-center gap-2">
                             <i class="fa-solid fa-calendar-check text-amber-500"></i> Quick Car Enquiry
                         </h2>
-                        <span class="text-[11px] font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/30">Instant WhatsApp</span>
+                        <span class="text-[11px] font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">Instant WhatsApp</span>
                     </div>
 
                     <form onsubmit="handleHeroBooking(event)" class="space-y-4 text-xs">
                         <div>
                             <label class="block text-slate-300 font-bold mb-1.5">Rental Option</label>
                             <div class="grid grid-cols-2 gap-2">
-                                <label class="flex items-center justify-center gap-2 p-2.5 bg-slate-950 border border-slate-800 rounded-xl cursor-pointer hover:border-amber-500/60 transition shadow-inner">
+                                <label class="flex items-center justify-center gap-2 p-2.5 bg-slate-950 border border-slate-800 rounded-xl cursor-pointer hover:border-amber-500/50 transition">
                                     <input type="radio" name="rentalOption" value="With Driver" checked onchange="toggleRentalFields()" class="accent-amber-500">
                                     <span class="font-bold text-slate-200">With Driver</span>
                                 </label>
-                                <label class="flex items-center justify-center gap-2 p-2.5 bg-slate-950 border border-slate-800 rounded-xl cursor-pointer hover:border-amber-500/60 transition shadow-inner">
+                                <label class="flex items-center justify-center gap-2 p-2.5 bg-slate-950 border border-slate-800 rounded-xl cursor-pointer hover:border-amber-500/50 transition">
                                     <input type="radio" name="rentalOption" value="Self Drive" onchange="toggleRentalFields()" class="accent-amber-500">
                                     <span class="font-bold text-slate-200">Self Drive</span>
                                 </label>
@@ -203,11 +175,11 @@
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 <div>
                                     <label class="block text-slate-300 font-bold mb-1">Pick-up Location</label>
-                                    <input type="text" id="pickupLoc" placeholder="e.g. Gehra, Panna / Home" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:border-amber-500 focus:outline-none shadow-inner">
+                                    <input type="text" id="pickupLoc" placeholder="e.g. Gehra, Panna / Home" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:border-amber-500 focus:outline-none">
                                 </div>
                                 <div>
                                     <label class="block text-slate-300 font-bold mb-1">Drop Location</label>
-                                    <input type="text" id="dropLoc" placeholder="e.g. Khajuraho / Satna" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:border-amber-500 focus:outline-none shadow-inner">
+                                    <input type="text" id="dropLoc" placeholder="e.g. Khajuraho / Satna / Airport" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:border-amber-500 focus:outline-none">
                                 </div>
                             </div>
                         </div>
@@ -217,11 +189,11 @@
                             <div>
                                 <label class="block text-slate-300 font-bold mb-1.5">Select Rental Duration</label>
                                 <div class="grid grid-cols-2 gap-2">
-                                    <label class="flex items-center justify-center gap-2 p-2 bg-slate-950 border border-slate-800 rounded-xl cursor-pointer hover:border-amber-500/60 transition shadow-inner">
+                                    <label class="flex items-center justify-center gap-2 p-2 bg-slate-950 border border-slate-800 rounded-xl cursor-pointer hover:border-amber-500/50 transition">
                                         <input type="radio" name="selfDriveDuration" value="12 Hours" checked class="accent-amber-500">
                                         <span class="font-bold text-slate-200">12 Hours</span>
                                     </label>
-                                    <label class="flex items-center justify-center gap-2 p-2 bg-slate-950 border border-slate-800 rounded-xl cursor-pointer hover:border-amber-500/60 transition shadow-inner">
+                                    <label class="flex items-center justify-center gap-2 p-2 bg-slate-950 border border-slate-800 rounded-xl cursor-pointer hover:border-amber-500/50 transition">
                                         <input type="radio" name="selfDriveDuration" value="24 Hours" class="accent-amber-500">
                                         <span class="font-bold text-slate-200">24 Hours</span>
                                     </label>
@@ -230,7 +202,7 @@
 
                             <div>
                                 <label class="block text-slate-300 font-bold mb-1">Where are you heading?</label>
-                                <input type="text" id="selfDriveHeading" placeholder="Enter Destination / Drop Location" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:border-amber-500 focus:outline-none shadow-inner">
+                                <input type="text" id="selfDriveHeading" placeholder="Enter Destination / Drop Location" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:border-amber-500 focus:outline-none">
                             </div>
                         </div>
 
@@ -238,24 +210,24 @@
                         <div class="grid grid-cols-2 gap-3">
                             <div>
                                 <label for="travelDate" class="block text-slate-300 font-bold mb-1">Travel Date</label>
-                                <input type="date" id="travelDate" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:border-amber-500 focus:outline-none shadow-inner">
+                                <input type="date" id="travelDate" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:border-amber-500 focus:outline-none">
                             </div>
                             <div>
                                 <label for="carSelect" class="block text-slate-300 font-bold mb-1">Select Vehicle</label>
-                                <select id="carSelect" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:border-amber-500 focus:outline-none shadow-inner">
+                                <select id="carSelect" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:border-amber-500 focus:outline-none">
                                     <option value="Swift Dzire">Swift Dzire (Sedan)</option>
                                     <option value="Baleno">Baleno (Hatchback)</option>
                                     <option value="Ertiga">Maruti Ertiga (7-Seater)</option>
-                                    <option value="Toyota Rumion">Toyota Rumion</option>
+                                    <option value="Toyota Rumion">Toyota Rumion / Rumeo</option>
                                     <option value="Kia Carens">Kia Carens (MPV)</option>
-                                    <option value="Innova">Innova / Crysta</option>
-                                    <option value="Thar">Mahindra Thar (4x4)</option>
-                                    <option value="Scorpio">Mahindra Scorpio</option>
+                                    <option value="Innova">Innova / Innova Crysta</option>
+                                    <option value="Thar">Mahindra Thar (4x4 SUV)</option>
+                                    <option value="Scorpio">Mahindra Scorpio (SUV)</option>
                                 </select>
                             </div>
                         </div>
 
-                        <!-- TERMS & CONDITIONS CHECKBOX -->
+                        <!-- TERMS & CONDITIONS CHECKBOX (SELF DRIVE ONLY) -->
                         <div id="tncContainer" class="hidden items-center gap-2 pt-1">
                             <input type="checkbox" id="agreeTnC" class="accent-amber-500 rounded cursor-pointer">
                             <label for="agreeTnC" class="text-slate-300 text-[11px]">
@@ -263,7 +235,7 @@
                             </label>
                         </div>
 
-                        <button type="submit" id="submitBtn" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-extrabold py-3.5 rounded-xl shadow-xl shadow-amber-500/30 transition flex items-center justify-center gap-2 text-sm mt-2 btn-3d">
+                        <button type="submit" id="submitBtn" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-extrabold py-3.5 rounded-xl shadow-lg shadow-amber-500/20 transition flex items-center justify-center gap-2 text-sm mt-2">
                             <i class="fa-brands fa-whatsapp text-lg"></i> Check Availability & Book
                         </button>
                     </form>
@@ -273,18 +245,18 @@
     </section>
 
     <!-- Self-Drive Requirements Highlights Banner -->
-    <section class="bg-slate-900/60 border-b border-slate-800 py-6 shadow-md">
+    <section class="bg-slate-900/60 border-b border-slate-800 py-6">
         <div class="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-300">
             <div class="font-extrabold text-amber-400 flex items-center gap-2 text-sm">
                 <i class="fa-solid fa-key text-amber-500"></i> Self-Drive Requirements:
             </div>
-            <div class="flex items-center gap-2 bg-slate-950 px-3.5 py-2 rounded-xl border border-slate-800 shadow-inner">
+            <div class="flex items-center gap-2 bg-slate-950 px-3 py-1.5 rounded-lg border border-slate-800">
                 <i class="fa-solid fa-id-card text-amber-500"></i> Valid Driving License
             </div>
-            <div class="flex items-center gap-2 bg-slate-950 px-3.5 py-2 rounded-xl border border-slate-800 shadow-inner">
+            <div class="flex items-center gap-2 bg-slate-950 px-3 py-1.5 rounded-lg border border-slate-800">
                 <i class="fa-solid fa-address-card text-amber-500"></i> Govt ID Proof
             </div>
-            <div class="flex items-center gap-2 bg-slate-950 px-3.5 py-2 rounded-xl border border-slate-800 shadow-inner">
+            <div class="flex items-center gap-2 bg-slate-950 px-3 py-1.5 rounded-lg border border-slate-800">
                 <i class="fa-solid fa-shield-cat text-amber-500"></i> Minimum Security Deposit
             </div>
             <a onclick="openTermsModal()" class="text-amber-400 font-bold hover:underline cursor-pointer flex items-center gap-1">
@@ -303,8 +275,8 @@
             </div>
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/70 transition group space-y-3 card-3d">
-                    <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl group-hover:bg-amber-500 group-hover:text-slate-950 transition shadow-lg">
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition group space-y-3">
+                    <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl group-hover:bg-amber-500 group-hover:text-slate-950 transition">
                         <i class="fa-solid fa-user-tie"></i>
                     </div>
                     <h3 class="text-lg font-bold text-white">Chauffeur Driven Cars</h3>
@@ -313,26 +285,26 @@
                     </p>
                 </div>
 
-                <div class="bg-slate-950 p-6 rounded-2xl border border-amber-500/40 hover:border-amber-500 transition group space-y-4 relative flex flex-col justify-between card-3d shadow-xl shadow-amber-500/5">
+                <div class="bg-slate-950 p-6 rounded-2xl border border-amber-500/30 hover:border-amber-500 transition group space-y-4 relative flex flex-col justify-between">
                     <div class="space-y-3">
                         <div class="flex items-center justify-between">
-                            <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl group-hover:bg-amber-500 group-hover:text-slate-950 transition shadow-lg">
+                            <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl group-hover:bg-amber-500 group-hover:text-slate-950 transition">
                                 <i class="fa-solid fa-key"></i>
                             </div>
-                            <span class="text-[10px] bg-amber-500/20 text-amber-400 px-2.5 py-1 rounded-full font-bold uppercase border border-amber-500/30">Popular</span>
+                            <span class="text-[10px] bg-amber-500/20 text-amber-400 px-2.5 py-1 rounded-full font-bold uppercase">Popular</span>
                         </div>
                         <h3 class="text-lg font-bold text-white">Self Drive Cars</h3>
                         <p class="text-xs text-slate-400 leading-relaxed">
                             Enjoy complete privacy and freedom to drive at your own pace with our well-maintained fleet. Collect from our garage location.
                         </p>
                     </div>
-                    <button onclick="openTermsModal()" class="w-full mt-2 bg-slate-900 hover:bg-slate-800 text-amber-400 border border-amber-500/40 text-xs font-bold py-2.5 rounded-xl transition flex items-center justify-center gap-2 btn-3d">
+                    <button onclick="openTermsModal()" class="w-full mt-2 bg-slate-900 hover:bg-slate-800 text-amber-400 border border-amber-500/30 text-xs font-bold py-2.5 rounded-xl transition flex items-center justify-center gap-2">
                         <i class="fa-solid fa-file-contract"></i> View Terms & Conditions
                     </button>
                 </div>
 
-                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/70 transition group space-y-3 card-3d">
-                    <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl group-hover:bg-amber-500 group-hover:text-slate-950 transition shadow-lg">
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition group space-y-3">
+                    <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl group-hover:bg-amber-500 group-hover:text-slate-950 transition">
                         <i class="fa-solid fa-plane-departure"></i>
                     </div>
                     <h3 class="text-lg font-bold text-white">Airport Transfers</h3>
@@ -341,8 +313,8 @@
                     </p>
                 </div>
 
-                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/70 transition group space-y-3 card-3d">
-                    <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl group-hover:bg-amber-500 group-hover:text-slate-950 transition shadow-lg">
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition group space-y-3">
+                    <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl group-hover:bg-amber-500 group-hover:text-slate-950 transition">
                         <i class="fa-solid fa-route"></i>
                     </div>
                     <h3 class="text-lg font-bold text-white">Outstation Trips</h3>
@@ -351,8 +323,8 @@
                     </p>
                 </div>
 
-                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/70 transition group space-y-3 card-3d">
-                    <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl group-hover:bg-amber-500 group-hover:text-slate-950 transition shadow-lg">
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition group space-y-3">
+                    <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl group-hover:bg-amber-500 group-hover:text-slate-950 transition">
                         <i class="fa-solid fa-tree"></i>
                     </div>
                     <h3 class="text-lg font-bold text-white">Panna Safari Tours</h3>
@@ -361,8 +333,8 @@
                     </p>
                 </div>
 
-                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/70 transition group space-y-3 card-3d">
-                    <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl group-hover:bg-amber-500 group-hover:text-slate-950 transition shadow-lg">
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition group space-y-3">
+                    <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl group-hover:bg-amber-500 group-hover:text-slate-950 transition">
                         <i class="fa-solid fa-gem"></i>
                     </div>
                     <h3 class="text-lg font-bold text-white">Wedding & Events</h3>
@@ -384,8 +356,8 @@
                 <p class="text-slate-400 text-sm mt-2">Transparent pricing with fixed KM limits. Standard extra charges apply beyond limit.</p>
             </div>
 
-            <!-- Self Drive Price Table with 3D Effect -->
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl card-3d">
+            <!-- Self Drive Price Table -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl">
                 <div class="p-4 bg-slate-950 border-b border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-3">
                     <h3 class="font-extrabold text-white flex items-center gap-2 text-base">
                         <i class="fa-solid fa-table text-amber-500"></i> Self Drive Tariff Chart
@@ -396,7 +368,7 @@
                 </div>
                 <div class="overflow-x-auto">
                     <table class="w-full text-left text-xs text-slate-300">
-                        <thead class="bg-slate-950/90 text-amber-400 uppercase font-extrabold border-b border-slate-800">
+                        <thead class="bg-slate-950/80 text-amber-400 uppercase font-extrabold border-b border-slate-800">
                             <tr>
                                 <th class="py-4 px-4 sm:px-6">Vehicle</th>
                                 <th class="py-4 px-4 sm:px-6">12 Hours Rate</th>
@@ -406,7 +378,7 @@
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-800 font-medium">
-                            <tr class="hover:bg-slate-800/50 transition">
+                            <tr class="hover:bg-slate-800/40 transition">
                                 <td class="py-4 px-4 sm:px-6 font-bold text-white flex items-center gap-2">
                                     <i class="fa-solid fa-car text-amber-500"></i> Swift Dzire
                                 </td>
@@ -414,10 +386,10 @@
                                 <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹2,500 <span class="text-[10px] text-slate-400 block font-normal">(400 KM Limit)</span></td>
                                 <td class="py-4 px-4 sm:px-6">₹12 / km</td>
                                 <td class="py-4 px-4 sm:px-6 text-center">
-                                    <button onclick="quickBookCar('Swift Dzire')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-3 py-1.5 rounded-lg transition btn-3d">Book</button>
+                                    <button onclick="quickBookCar('Swift Dzire')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-3 py-1.5 rounded-lg transition">Book</button>
                                 </td>
                             </tr>
-                            <tr class="hover:bg-slate-800/50 transition">
+                            <tr class="hover:bg-slate-800/40 transition">
                                 <td class="py-4 px-4 sm:px-6 font-bold text-white flex items-center gap-2">
                                     <i class="fa-solid fa-car text-amber-500"></i> Baleno
                                 </td>
@@ -425,10 +397,10 @@
                                 <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹2,500 <span class="text-[10px] text-slate-400 block font-normal">(400 KM Limit)</span></td>
                                 <td class="py-4 px-4 sm:px-6">₹12 / km</td>
                                 <td class="py-4 px-4 sm:px-6 text-center">
-                                    <button onclick="quickBookCar('Baleno')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-3 py-1.5 rounded-lg transition btn-3d">Book</button>
+                                    <button onclick="quickBookCar('Baleno')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-3 py-1.5 rounded-lg transition">Book</button>
                                 </td>
                             </tr>
-                            <tr class="hover:bg-slate-800/50 transition">
+                            <tr class="hover:bg-slate-800/40 transition">
                                 <td class="py-4 px-4 sm:px-6 font-bold text-white flex items-center gap-2">
                                     <i class="fa-solid fa-car-side text-amber-500"></i> Maruti Ertiga
                                 </td>
@@ -436,21 +408,21 @@
                                 <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹3,500 <span class="text-[10px] text-slate-400 block font-normal">(360 KM Limit)</span></td>
                                 <td class="py-4 px-4 sm:px-6">₹12 / km</td>
                                 <td class="py-4 px-4 sm:px-6 text-center">
-                                    <button onclick="quickBookCar('Maruti Ertiga')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-3 py-1.5 rounded-lg transition btn-3d">Book</button>
+                                    <button onclick="quickBookCar('Maruti Ertiga')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-3 py-1.5 rounded-lg transition">Book</button>
                                 </td>
                             </tr>
-                            <tr class="hover:bg-slate-800/50 transition">
+                            <tr class="hover:bg-slate-800/40 transition">
                                 <td class="py-4 px-4 sm:px-6 font-bold text-white flex items-center gap-2">
-                                    <i class="fa-solid fa-car-side text-amber-500"></i> Toyota Rumion
+                                    <i class="fa-solid fa-car-side text-amber-500"></i> Toyota Rumion (Rumeo)
                                 </td>
                                 <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹2,000 <span class="text-[10px] text-slate-400 block font-normal">(180 KM Limit)</span></td>
                                 <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹3,500 <span class="text-[10px] text-slate-400 block font-normal">(360 KM Limit)</span></td>
                                 <td class="py-4 px-4 sm:px-6">₹12 / km</td>
                                 <td class="py-4 px-4 sm:px-6 text-center">
-                                    <button onclick="quickBookCar('Toyota Rumion')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-3 py-1.5 rounded-lg transition btn-3d">Book</button>
+                                    <button onclick="quickBookCar('Toyota Rumion')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-3 py-1.5 rounded-lg transition">Book</button>
                                 </td>
                             </tr>
-                            <tr class="hover:bg-slate-800/50 transition">
+                            <tr class="hover:bg-slate-800/40 transition">
                                 <td class="py-4 px-4 sm:px-6 font-bold text-white flex items-center gap-2">
                                     <i class="fa-solid fa-car-side text-amber-500"></i> Kia Carens
                                 </td>
@@ -458,10 +430,10 @@
                                 <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹3,500 <span class="text-[10px] text-slate-400 block font-normal">(360 KM Limit)</span></td>
                                 <td class="py-4 px-4 sm:px-6 font-bold text-amber-400">₹13 / km</td>
                                 <td class="py-4 px-4 sm:px-6 text-center">
-                                    <button onclick="quickBookCar('Kia Carens')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-3 py-1.5 rounded-lg transition btn-3d">Book</button>
+                                    <button onclick="quickBookCar('Kia Carens')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-3 py-1.5 rounded-lg transition">Book</button>
                                 </td>
                             </tr>
-                            <tr class="hover:bg-slate-800/50 transition">
+                            <tr class="hover:bg-slate-800/40 transition">
                                 <td class="py-4 px-4 sm:px-6 font-bold text-white flex items-center gap-2">
                                     <i class="fa-solid fa-car-side text-amber-500"></i> Innova / Crysta
                                 </td>
@@ -469,10 +441,10 @@
                                 <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹5,500 <span class="text-[10px] text-slate-400 block font-normal">(300 KM Limit)</span></td>
                                 <td class="py-4 px-4 sm:px-6 font-bold text-amber-400">₹15 / km</td>
                                 <td class="py-4 px-4 sm:px-6 text-center">
-                                    <button onclick="quickBookCar('Innova')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-3 py-1.5 rounded-lg transition btn-3d">Book</button>
+                                    <button onclick="quickBookCar('Innova')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-3 py-1.5 rounded-lg transition">Book</button>
                                 </td>
                             </tr>
-                            <tr class="hover:bg-slate-800/50 transition">
+                            <tr class="hover:bg-slate-800/40 transition">
                                 <td class="py-4 px-4 sm:px-6 font-bold text-white flex items-center gap-2">
                                     <i class="fa-solid fa-truck-monster text-amber-500"></i> Mahindra Thar
                                 </td>
@@ -480,10 +452,10 @@
                                 <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹5,500 <span class="text-[10px] text-slate-400 block font-normal">(300 KM Limit)</span></td>
                                 <td class="py-4 px-4 sm:px-6 font-bold text-amber-400">₹15 / km</td>
                                 <td class="py-4 px-4 sm:px-6 text-center">
-                                    <button onclick="quickBookCar('Mahindra Thar')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-3 py-1.5 rounded-lg transition btn-3d">Book</button>
+                                    <button onclick="quickBookCar('Mahindra Thar')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-3 py-1.5 rounded-lg transition">Book</button>
                                 </td>
                             </tr>
-                            <tr class="hover:bg-slate-800/50 transition">
+                            <tr class="hover:bg-slate-800/40 transition">
                                 <td class="py-4 px-4 sm:px-6 font-bold text-white flex items-center gap-2">
                                     <i class="fa-solid fa-truck-pickup text-amber-500"></i> Mahindra Scorpio
                                 </td>
@@ -491,7 +463,7 @@
                                 <td class="py-4 px-4 sm:px-6 text-emerald-400 font-bold">₹5,500 <span class="text-[10px] text-slate-400 block font-normal">(300 KM Limit)</span></td>
                                 <td class="py-4 px-4 sm:px-6 font-bold text-amber-400">₹15 / km</td>
                                 <td class="py-4 px-4 sm:px-6 text-center">
-                                    <button onclick="quickBookCar('Mahindra Scorpio')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-3 py-1.5 rounded-lg transition btn-3d">Book</button>
+                                    <button onclick="quickBookCar('Mahindra Scorpio')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-3 py-1.5 rounded-lg transition">Book</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -499,16 +471,16 @@
                 </div>
             </div>
 
-            <!-- Vehicle Cards Display with 3D Hover Effect -->
+            <!-- Vehicle Cards Display -->
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Vehicle 1: Dzire -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-amber-500 transition group flex flex-col justify-between card-3d">
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-amber-500/60 transition group flex flex-col justify-between">
                     <div>
                         <div class="relative h-48 bg-slate-950 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80" 
                                  alt="Swift Dzire" 
-                                 class="w-full h-48 object-cover group-hover:scale-110 transition duration-700">
-                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-md shadow">Sedan</span>
+                                 class="w-full h-48 object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-md">Sedan</span>
                         </div>
                         <div class="p-5 space-y-2">
                             <h3 class="text-xl font-bold text-white">Swift Dzire</h3>
@@ -516,20 +488,20 @@
                         </div>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="quickBookCar('Swift Dzire')" class="w-full bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-slate-200 font-bold py-2.5 rounded-xl border border-slate-700 hover:border-amber-500 transition text-sm flex items-center justify-center gap-2 btn-3d">
+                        <button onclick="quickBookCar('Swift Dzire')" class="w-full bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-slate-200 font-bold py-2.5 rounded-xl border border-slate-700 hover:border-amber-500 transition text-sm flex items-center justify-center gap-2">
                             <i class="fa-brands fa-whatsapp"></i> Book Dzire
                         </button>
                     </div>
                 </div>
 
                 <!-- Vehicle 2: Ertiga -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-amber-500 transition group flex flex-col justify-between card-3d">
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-amber-500/60 transition group flex flex-col justify-between">
                     <div>
                         <div class="relative h-48 bg-slate-950 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80" 
                                  alt="Maruti Ertiga" 
-                                 class="w-full h-48 object-cover group-hover:scale-110 transition duration-700">
-                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-md shadow">Family MPV</span>
+                                 class="w-full h-48 object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-md">Family MPV</span>
                         </div>
                         <div class="p-5 space-y-2">
                             <h3 class="text-xl font-bold text-white">Maruti Ertiga</h3>
@@ -537,20 +509,20 @@
                         </div>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="quickBookCar('Maruti Ertiga')" class="w-full bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-slate-200 font-bold py-2.5 rounded-xl border border-slate-700 hover:border-amber-500 transition text-sm flex items-center justify-center gap-2 btn-3d">
+                        <button onclick="quickBookCar('Maruti Ertiga')" class="w-full bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-slate-200 font-bold py-2.5 rounded-xl border border-slate-700 hover:border-amber-500 transition text-sm flex items-center justify-center gap-2">
                             <i class="fa-brands fa-whatsapp"></i> Book Ertiga
                         </button>
                     </div>
                 </div>
 
-                <!-- Vehicle 3: Rumion -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-amber-500 transition group flex flex-col justify-between card-3d">
+                <!-- Vehicle 3: Rumion / Rumeo -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-amber-500/60 transition group flex flex-col justify-between">
                     <div>
                         <div class="relative h-48 bg-slate-950 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" 
-                                 alt="Toyota Rumion" 
-                                 class="w-full h-48 object-cover group-hover:scale-110 transition duration-700">
-                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-md shadow">7-Seater MPV</span>
+                                 alt="Toyota Rumion Rumeo" 
+                                 class="w-full h-48 object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-md">7-Seater MPV</span>
                         </div>
                         <div class="p-5 space-y-2">
                             <h3 class="text-xl font-bold text-white">Toyota Rumion / Rumeo</h3>
@@ -558,20 +530,20 @@
                         </div>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="quickBookCar('Toyota Rumion')" class="w-full bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-slate-200 font-bold py-2.5 rounded-xl border border-slate-700 hover:border-amber-500 transition text-sm flex items-center justify-center gap-2 btn-3d">
+                        <button onclick="quickBookCar('Toyota Rumion')" class="w-full bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-slate-200 font-bold py-2.5 rounded-xl border border-slate-700 hover:border-amber-500 transition text-sm flex items-center justify-center gap-2">
                             <i class="fa-brands fa-whatsapp"></i> Book Rumion
                         </button>
                     </div>
                 </div>
 
                 <!-- Vehicle 4: Kia Carens -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-amber-500 transition group flex flex-col justify-between card-3d">
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-amber-500/60 transition group flex flex-col justify-between">
                     <div>
                         <div class="relative h-48 bg-slate-950 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80" 
                                  alt="Kia Carens" 
-                                 class="w-full h-48 object-cover group-hover:scale-110 transition duration-700">
-                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-md shadow">Luxury MPV</span>
+                                 class="w-full h-48 object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-md">Luxury MPV</span>
                         </div>
                         <div class="p-5 space-y-2">
                             <h3 class="text-xl font-bold text-white">Kia Carens</h3>
@@ -579,20 +551,20 @@
                         </div>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="quickBookCar('Kia Carens')" class="w-full bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-slate-200 font-bold py-2.5 rounded-xl border border-slate-700 hover:border-amber-500 transition text-sm flex items-center justify-center gap-2 btn-3d">
+                        <button onclick="quickBookCar('Kia Carens')" class="w-full bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-slate-200 font-bold py-2.5 rounded-xl border border-slate-700 hover:border-amber-500 transition text-sm flex items-center justify-center gap-2">
                             <i class="fa-brands fa-whatsapp"></i> Book Carens
                         </button>
                     </div>
                 </div>
 
                 <!-- Vehicle 5: Innova -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-amber-500 transition group flex flex-col justify-between card-3d">
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-amber-500/60 transition group flex flex-col justify-between">
                     <div>
                         <div class="relative h-48 bg-slate-950 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80" 
                                  alt="Innova" 
-                                 class="w-full h-48 object-cover group-hover:scale-110 transition duration-700">
-                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-md shadow">King of Highways</span>
+                                 class="w-full h-48 object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-md">King of Highways</span>
                         </div>
                         <div class="p-5 space-y-2">
                             <h3 class="text-xl font-bold text-white">Innova / Crysta</h3>
@@ -600,7 +572,7 @@
                         </div>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="quickBookCar('Innova')" class="w-full bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-slate-200 font-bold py-2.5 rounded-xl border border-slate-700 hover:border-amber-500 transition text-sm flex items-center justify-center gap-2 btn-3d">
+                        <button onclick="quickBookCar('Innova')" class="w-full bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-slate-200 font-bold py-2.5 rounded-xl border border-slate-700 hover:border-amber-500 transition text-sm flex items-center justify-center gap-2">
                             <i class="fa-brands fa-whatsapp"></i> Book Innova
                         </button>
                     </div>
@@ -610,8 +582,8 @@
     </section>
 
     <!-- Terms & Conditions Modal -->
-    <div id="termsModal" class="fixed inset-0 z-50 hidden bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
-        <div class="bg-slate-900 border border-slate-700 rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-6 shadow-2xl relative my-8 form-3d">
+    <div id="termsModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-6 shadow-2xl relative my-8">
             <button onclick="closeTermsModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white text-xl">
                 <i class="fa-solid fa-xmark"></i>
             </button>
@@ -655,7 +627,7 @@
             </div>
 
             <div class="pt-2 border-t border-slate-800 flex justify-end">
-                <button onclick="closeTermsModal()" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-6 py-2.5 rounded-xl text-xs transition btn-3d">
+                <button onclick="closeTermsModal()" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-6 py-2.5 rounded-xl text-xs transition">
                     I Understand & Agree
                 </button>
             </div>
@@ -672,8 +644,8 @@
             </div>
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 text-center space-y-3 card-3d">
-                    <div class="w-16 h-16 bg-amber-500/10 text-amber-500 rounded-2xl flex items-center justify-center text-3xl mx-auto shadow-lg">
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 text-center space-y-3">
+                    <div class="w-16 h-16 bg-amber-500/10 text-amber-500 rounded-2xl flex items-center justify-center text-3xl mx-auto">
                         <i class="fa-solid fa-pump-soap"></i>
                     </div>
                     <h3 class="text-lg font-bold text-white">Sanitized Cars</h3>
@@ -682,8 +654,8 @@
                     </p>
                 </div>
 
-                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 text-center space-y-3 card-3d">
-                    <div class="w-16 h-16 bg-amber-500/10 text-amber-500 rounded-2xl flex items-center justify-center text-3xl mx-auto shadow-lg">
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 text-center space-y-3">
+                    <div class="w-16 h-16 bg-amber-500/10 text-amber-500 rounded-2xl flex items-center justify-center text-3xl mx-auto">
                         <i class="fa-solid fa-headset"></i>
                     </div>
                     <h3 class="text-lg font-bold text-white">24×7 Support</h3>
@@ -692,8 +664,8 @@
                     </p>
                 </div>
 
-                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 text-center space-y-3 card-3d">
-                    <div class="w-16 h-16 bg-amber-500/10 text-amber-500 rounded-2xl flex items-center justify-center text-3xl mx-auto shadow-lg">
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 text-center space-y-3">
+                    <div class="w-16 h-16 bg-amber-500/10 text-amber-500 rounded-2xl flex items-center justify-center text-3xl mx-auto">
                         <i class="fa-solid fa-hand-holding-dollar"></i>
                     </div>
                     <h3 class="text-lg font-bold text-white">Affordable Prices</h3>
@@ -702,8 +674,8 @@
                     </p>
                 </div>
 
-                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 text-center space-y-3 card-3d">
-                    <div class="w-16 h-16 bg-amber-500/10 text-amber-500 rounded-2xl flex items-center justify-center text-3xl mx-auto shadow-lg">
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 text-center space-y-3">
+                    <div class="w-16 h-16 bg-amber-500/10 text-amber-500 rounded-2xl flex items-center justify-center text-3xl mx-auto">
                         <i class="fa-brands fa-whatsapp"></i>
                     </div>
                     <h3 class="text-lg font-bold text-white">Instant Booking</h3>
@@ -724,13 +696,13 @@
                     <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-1">What Our Clients Say</h2>
                     <p class="text-slate-400 text-sm mt-2">Real feedback from satisfied customers in Panna & outstation travelers.</p>
                 </div>
-                <button onclick="openReviewModal()" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-5 py-2.5 rounded-xl text-xs transition flex items-center justify-center gap-2 self-center md:self-auto btn-3d">
+                <button onclick="openReviewModal()" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-5 py-2.5 rounded-xl text-xs transition flex items-center justify-center gap-2 self-center md:self-auto">
                     <i class="fa-solid fa-pen-to-square"></i> Write a Review
                 </button>
             </div>
 
             <div id="reviewsGrid" class="grid md:grid-cols-3 gap-6">
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl space-y-4 card-3d">
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl space-y-4">
                     <div class="flex text-amber-500 text-sm gap-1">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
@@ -738,7 +710,7 @@
                         "Took Kia Carens for a 3-day family trip from Panna to Khajuraho & Satna. Vehicle condition was 10/10 brand new, clean, and extremely smooth ride."
                     </p>
                     <div class="flex items-center gap-3 pt-2 border-t border-slate-800">
-                        <div class="w-10 h-10 bg-amber-500 text-slate-950 rounded-full flex items-center justify-center font-bold shadow">AK</div>
+                        <div class="w-10 h-10 bg-amber-500 text-slate-950 rounded-full flex items-center justify-center font-bold">AK</div>
                         <div>
                             <h4 class="text-sm font-bold text-white">Amit Kumar</h4>
                             <span class="text-[11px] text-slate-400">Panna Resident</span>
@@ -746,7 +718,7 @@
                     </div>
                 </div>
 
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl space-y-4 card-3d">
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl space-y-4">
                     <div class="flex text-amber-500 text-sm gap-1">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
@@ -754,7 +726,7 @@
                         "Best self-drive car rental service near Shanvi Landmark! Easy process, minimal documentation, and very polite owner."
                     </p>
                     <div class="flex items-center gap-3 pt-2 border-t border-slate-800">
-                        <div class="w-10 h-10 bg-amber-500 text-slate-950 rounded-full flex items-center justify-center font-bold shadow">VS</div>
+                        <div class="w-10 h-10 bg-amber-500 text-slate-950 rounded-full flex items-center justify-center font-bold">VS</div>
                         <div>
                             <h4 class="text-sm font-bold text-white">Vikram Singh</h4>
                             <span class="text-[11px] text-slate-400">Outstation Traveler</span>
@@ -762,7 +734,7 @@
                     </div>
                 </div>
 
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl space-y-4 card-3d">
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl space-y-4">
                     <div class="flex text-amber-500 text-sm gap-1">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
@@ -770,7 +742,7 @@
                         "Booked Innova with driver for airport drop. Driver was on time, super polite and drove very safely. Highly recommended Raj Laxmi Travels!"
                     </p>
                     <div class="flex items-center gap-3 pt-2 border-t border-slate-800">
-                        <div class="w-10 h-10 bg-amber-500 text-slate-950 rounded-full flex items-center justify-center font-bold shadow">RP</div>
+                        <div class="w-10 h-10 bg-amber-500 text-slate-950 rounded-full flex items-center justify-center font-bold">RP</div>
                         <div>
                             <h4 class="text-sm font-bold text-white">Ritu Patel</h4>
                             <span class="text-[11px] text-slate-400">Local Tourist</span>
@@ -782,8 +754,8 @@
     </section>
 
     <!-- Review Submission Modal -->
-    <div id="reviewModal" class="fixed inset-0 z-50 hidden bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
-        <div class="bg-slate-900 border border-slate-700 rounded-3xl max-w-md w-full p-6 space-y-5 shadow-2xl relative form-3d">
+    <div id="reviewModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-md w-full p-6 space-y-5 shadow-2xl relative">
             <button onclick="closeReviewModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white text-xl">
                 <i class="fa-solid fa-xmark"></i>
             </button>
@@ -796,17 +768,17 @@
             <form onsubmit="handleReviewSubmit(event)" class="space-y-4 text-xs">
                 <div>
                     <label class="block text-slate-300 font-bold mb-1">Your Name</label>
-                    <input type="text" id="revName" required placeholder="e.g. Rahul Sharma" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:border-amber-500 focus:outline-none shadow-inner">
+                    <input type="text" id="revName" required placeholder="e.g. Rahul Sharma" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:border-amber-500 focus:outline-none">
                 </div>
 
                 <div>
                     <label class="block text-slate-300 font-bold mb-1">Role / Location</label>
-                    <input type="text" id="revRole" placeholder="e.g. Local Tourist / Panna Resident" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:border-amber-500 focus:outline-none shadow-inner">
+                    <input type="text" id="revRole" placeholder="e.g. Local Tourist / Panna Resident" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:border-amber-500 focus:outline-none">
                 </div>
 
                 <div>
                     <label class="block text-slate-300 font-bold mb-1">Rating</label>
-                    <select id="revRating" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-amber-400 font-bold focus:border-amber-500 focus:outline-none shadow-inner">
+                    <select id="revRating" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-amber-400 font-bold focus:border-amber-500 focus:outline-none">
                         <option value="5">⭐⭐⭐⭐⭐ (5/5 Excellent)</option>
                         <option value="4">⭐⭐⭐⭐ (4/5 Very Good)</option>
                         <option value="3">⭐⭐⭐ (3/5 Average)</option>
@@ -815,10 +787,10 @@
 
                 <div>
                     <label class="block text-slate-300 font-bold mb-1">Your Feedback</label>
-                    <textarea id="revComment" rows="3" required placeholder="Write a few lines about our car condition, driver behaviour..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:border-amber-500 focus:outline-none shadow-inner"></textarea>
+                    <textarea id="revComment" rows="3" required placeholder="Write a few lines about our car condition, driver behaviour, or rental service..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:border-amber-500 focus:outline-none"></textarea>
                 </div>
 
-                <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold py-3 rounded-xl transition text-xs btn-3d">
+                <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold py-3 rounded-xl transition text-xs">
                     Submit Review
                 </button>
             </form>
@@ -839,8 +811,8 @@
 
                     <div class="space-y-4 text-sm">
                         <!-- Address -->
-                        <div class="flex items-start gap-4 p-4 bg-slate-950 rounded-2xl border border-slate-800 card-3d">
-                            <div class="w-10 h-10 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-xl shrink-0 shadow">
+                        <div class="flex items-start gap-4 p-4 bg-slate-950 rounded-2xl border border-slate-800">
+                            <div class="w-10 h-10 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-xl shrink-0">
                                 <i class="fa-solid fa-location-dot"></i>
                             </div>
                             <div>
@@ -853,8 +825,8 @@
                         </div>
 
                         <!-- Phone -->
-                        <div class="flex items-start gap-4 p-4 bg-slate-950 rounded-2xl border border-slate-800 card-3d">
-                            <div class="w-10 h-10 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-xl shrink-0 shadow">
+                        <div class="flex items-start gap-4 p-4 bg-slate-950 rounded-2xl border border-slate-800">
+                            <div class="w-10 h-10 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-xl shrink-0">
                                 <i class="fa-solid fa-phone"></i>
                             </div>
                             <div>
@@ -865,7 +837,7 @@
 
                         <!-- WhatsApp & Insta -->
                         <div class="grid grid-cols-2 gap-4">
-                            <a href="https://wa.me/919303418620" target="_blank" class="flex items-center gap-3 p-4 bg-slate-950 rounded-2xl border border-slate-800 hover:border-green-500 transition card-3d">
+                            <a href="https://wa.me/919303418620" target="_blank" class="flex items-center gap-3 p-4 bg-slate-950 rounded-2xl border border-slate-800 hover:border-green-500 transition">
                                 <i class="fa-brands fa-whatsapp text-green-500 text-2xl"></i>
                                 <div>
                                     <h5 class="text-xs text-slate-400">WhatsApp</h5>
@@ -873,11 +845,11 @@
                                 </div>
                             </a>
 
-                            <a href="https://www.instagram.com/rajlaxmitravellers.78?igsh=Yng0bWRqNGtlNGZp" target="_blank" class="flex items-center gap-3 p-4 bg-slate-950 rounded-2xl border border-slate-800 hover:border-pink-500 transition card-3d">
+                            <a href="https://www.instagram.com/rajlaxmitravellers.78?igsh=Yng0bWRqNGtlNGZp" target="_blank" class="flex items-center gap-3 p-4 bg-slate-950 rounded-2xl border border-slate-800 hover:border-pink-500 transition">
                                 <i class="fa-brands fa-instagram text-pink-500 text-2xl"></i>
                                 <div>
                                     <h5 class="text-xs text-slate-400">Instagram</h5>
-                                    <span class="text-sm font-bold text-white">@rajlaxmitravellers</span>
+                                    <span class="text-sm font-bold text-white">@rajlaxmitravellers.78</span>
                                 </div>
                             </a>
                         </div>
@@ -886,7 +858,7 @@
 
                 <!-- Google Map Box -->
                 <div class="lg:col-span-7 flex flex-col justify-between">
-                    <div class="w-full h-[350px] lg:h-full min-h-[320px] bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden relative shadow-2xl card-3d">
+                    <div class="w-full h-[350px] lg:h-full min-h-[320px] bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden relative shadow-xl">
                         <iframe 
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14516.27503803889!2d80.1770!3d24.7200!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3984180d5b4a2f8d%3A0x8e8a15b3c3b00000!2sPanna%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
                             width="100%" 
@@ -897,7 +869,7 @@
                             referrerpolicy="no-referrer-when-downgrade"
                             title="Raj Laxmi Travels Map Location">
                         </iframe>
-                        <div class="absolute bottom-4 right-4 bg-slate-900/90 text-white text-xs px-3 py-2 rounded-xl border border-slate-700 shadow-xl flex items-center gap-2 backdrop-blur">
+                        <div class="absolute bottom-4 right-4 bg-slate-900/90 text-white text-xs px-3 py-2 rounded-xl border border-slate-700 shadow-lg flex items-center gap-2">
                             <i class="fa-solid fa-map-pin text-amber-500"></i> Panna, Madhya Pradesh
                         </div>
                     </div>
@@ -910,13 +882,13 @@
     <div class="fixed bottom-5 right-5 z-50 flex flex-col gap-3">
         <a href="https://wa.me/919303418620?text=Hello%20Raj%20Laxmi%20Travels,%20I%20want%20to%20inquire%20about%20car%20rental." 
            target="_blank" 
-           class="w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center text-3xl shadow-2xl transition-transform hover:scale-110 pulse-glow btn-3d"
+           class="w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center text-3xl shadow-2xl transition-transform hover:scale-110 pulse-glow"
            aria-label="Chat on WhatsApp">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
 
         <a href="tel:9303418620" 
-           class="w-14 h-14 bg-amber-500 hover:bg-amber-600 text-slate-950 rounded-full flex items-center justify-center text-2xl shadow-2xl transition-transform hover:scale-110 btn-3d"
+           class="w-14 h-14 bg-amber-500 hover:bg-amber-600 text-slate-950 rounded-full flex items-center justify-center text-2xl shadow-2xl transition-transform hover:scale-110"
            aria-label="Call Now">
             <i class="fa-solid fa-phone"></i>
         </a>
@@ -927,7 +899,7 @@
         <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 sm:grid-cols-2 gap-8">
             <div class="space-y-3 md:col-span-1">
                 <div class="flex items-center gap-2">
-                    <div class="w-8 h-8 bg-amber-500 text-slate-950 rounded-lg flex items-center justify-center font-bold shadow">
+                    <div class="w-8 h-8 bg-amber-500 text-slate-950 rounded-lg flex items-center justify-center font-bold">
                         <i class="fa-solid fa-car-rear"></i>
                     </div>
                     <span class="text-lg font-bold text-white">Raj Laxmi Travels</span>
@@ -1037,7 +1009,7 @@
             toggleRentalFields();
         });
 
-        // Toggle Dynamic Inputs between With Driver and Self Drive
+        // Toggle Dynamic Dynamic Form Inputs between With Driver and Self Drive
         function toggleRentalFields() {
             const selectedOption = document.querySelector('input[name="rentalOption"]:checked').value;
             const withDriverDiv = document.getElementById('withDriverFields');
@@ -1097,7 +1069,7 @@
             }
 
             const newReviewCard = document.createElement('div');
-            newReviewCard.className = 'bg-slate-900 border border-amber-500/30 p-6 rounded-2xl space-y-4 card-3d';
+            newReviewCard.className = 'bg-slate-900 border border-amber-500/30 p-6 rounded-2xl space-y-4 animate-fade-in';
             newReviewCard.innerHTML = `
                 <div class="flex text-amber-500 text-sm gap-1">
                     ${starsHtml}
@@ -1106,7 +1078,7 @@
                     "${comment}"
                 </p>
                 <div class="flex items-center gap-3 pt-2 border-t border-slate-800">
-                    <div class="w-10 h-10 bg-amber-500 text-slate-950 rounded-full flex items-center justify-center font-bold shadow">${initials}</div>
+                    <div class="w-10 h-10 bg-amber-500 text-slate-950 rounded-full flex items-center justify-center font-bold">${initials}</div>
                     <div>
                         <h4 class="text-sm font-bold text-white">${name}</h4>
                         <span class="text-[11px] text-slate-400">${role}</span>
